@@ -10,13 +10,17 @@
 		<link href='http://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
 		<link rel="stylesheet" href="style_BIPS.css" type="text/css">
 		<script type="text/javascript">
-			function changePage(var page){
-				alert('coucou');
-				document.getElementById(anc_onglet).className = 'onglet onglet_hoverable';
-				document.getElementById(page).className = 'onglet onglet_choisi';
-				document.getElementById(anc_onglet+'_contenu').className = 'non-visible';
-				document.getElementById(page+'_contenu').className = 'visible';
-				anc_onglet = page;
+			function changePage(page){
+				if(page == 'galerie' || page == 'annales'){
+					alert('En cours de construction');
+				}
+				else{
+					document.getElementById(anc_onglet+'_onglet').className = 'onglet onglet_hoverable';
+					document.getElementById(page+'_onglet').className = 'onglet onglet_choisi';
+					document.getElementById(anc_onglet+'_contenu').className = 'non-visible';
+					document.getElementById(page+'_contenu').className = 'visible';
+					anc_onglet = page;
+				}
 			}
 		</script>
 	</head>
@@ -26,14 +30,14 @@
 				<img src="images/banniere_bips.png" style="position: relative; top: 10px;" width="950" height="200" alt="Banniere du bips" title="Banniere du bips" />
 			</header>
 			<nav class="onglets">
-				<span class="onglet onglet_choisi" id="index" onclick="changePage('index')">Accueil</span>
-				<span class="onglet onglet_hoverable" id="bips" onclick="changePage('bips')">BIPS</span>
-				<span class="onglet onglet_hoverable" id="clubs" onclick="changePage('clubs')">Les clubs</span>
-				<span class="onglet onglet_hoverable" id="boutique" onclick="changePage('boutique')">Boutique</span>
-				<span class="onglet onglet_hoverable" id="events" onclick="changePage('events')">Evénements</span>
+				<span class="onglet onglet_hoverable" id="index_onglet" onclick="changePage('index');">Accueil</span>
+				<span class="onglet onglet_hoverable" id="bips_onglet" onclick="changePage('bips');">BIPS</span>
+				<span class="onglet onglet_hoverable" id="clubs_onglet" onclick="changePage('clubs');">Les clubs</span>
+				<span class="onglet onglet_hoverable" id="boutique_onglet" onclick="changePage('boutique');">Boutique</span>
+				<span class="onglet onglet_hoverable" id="events_onglet" onclick="changePage('events');">Evénements</span>
 				<span class="onglet onglet_hoverable" onclick="changePage('galerie')">Galerie</span>
 				<span class="onglet onglet_hoverable" onclick="changePage('annales')">Annales</span>
-				<span class="onglet onglet_hoverable" id="journal" onclick="changePage('journal')">Journal</span>
+				<span class="onglet onglet_hoverable" id="journal_onglet" onclick="changePage('journal');">Journal</span>
 			</nav>
 			<nav class="menu">
 				<form action="enregistrement.php" method="post"> 
@@ -79,43 +83,23 @@
 				</p>
 			</nav>
 			<section>
-				<span id="index_contenu" class="visible">
-					<p>
-					<h2 class="titre">Bienvenue</h2>
-					<h3>Quibus occurrere bene pertinax miles explicatis ordinibus parans hastisque feriens scuta qui habitus iram pugnantium concitat et dolorem proximos iam gestu terrebat
-					sed eum in certamen alacriter consurgentem revocavere ductores rati intempestivum anceps subire certamen cum haut longe muri distarent, quorum tutela securitas poterat
-					in solido locari cunctorum.
-					</h3>
-					</p>
-					<p>
-					<h2 class="titre">Test d'article</h2>
-					<h3>Ac ne quis a nobis hoc ita dici forte miretur, quod alia quaedam in hoc facultas sit ingeni, neque haec dicendi ratio aut disciplina, ne nos quidem huic uni studio penitus umquam dediti fuimus.
-					Etenim omnes artes, quae ad humanitatem pertinent, habent quoddam commune vinculum, et quasi cognatione quadam inter se continentur.<br />
-					Sed cautela nimia in peiores haeserat plagas, ut narrabimus postea, aemulis consarcinantibus insidias graves apud Constantium, cetera medium principem sed siquid auribus eius huius modi
-					quivis infudisset ignotus, acerbum et inplacabilem et in hoc causarum titulo dissimilem sui.<br />
-					Nisi mihi Phaedrum, inquam, tu mentitum aut Zenonem putas, quorum utrumque auh2i, cum mihi nihil sane praeter sedulitatem probarent, omnes mihi Epicuri sententiae satis notae sunt.
-					atque eos, quos nominavi, cum Attico nostro frequenter auh2i, cum miraretur ille quidem utrumque, Phaedrum autem etiam amaret, cotidieque inter nos ea, quae audiebamus, conferebamus,
-					neque erat umquam controversia, quid ego intellegerem, sed quid probarem.<br />
-					</h3>
-					</p>
-					<p>
-					<h2 class="titre">Test d'article 2</h2>
-					<h3>Ac ne quis a nobis hoc ita dici forte miretur, quod alia quaedam in hoc facultas sit ingeni, neque haec dicendi ratio aut disciplina, ne nos quidem huic uni studio penitus umquam dediti fuimus.
-					Etenim omnes artes, quae ad humanitatem pertinent, habent quoddam commune vinculum, et quasi cognatione quadam inter se continentur.<br />
-					Sed cautela nimia in peiores haeserat plagas, ut narrabimus postea, aemulis consarcinantibus insidias graves apud Constantium, cetera medium principem sed siquid auribus eius huius modi
-					quivis infudisset ignotus, acerbum et inplacabilem et in hoc causarum titulo dissimilem sui.<br />
-					Nisi mihi Phaedrum, inquam, tu mentitum aut Zenonem putas, quorum utrumque audivi, cum mihi nihil sane praeter sedulitatem probarent, omnes mihi Epicuri sententiae satis notae sunt.
-					atque eos, quos nominavi, cum Attico nostro frequenter audivi, cum miraretur ille quidem utrumque, Phaedrum autem etiam amaret, cotidieque inter nos ea, quae audiebamus, conferebamus,
-					neque erat umquam controversia, quid ego intellegerem, sed quid probarem.<br />
-					</h3>
-					</p>
+				<span id="index_contenu" class="non-visible">
+					<?php include("accueil.php"); ?>
 				</span>
 				<span id="bips_contenu" class="non-visible">
-					<p>
-					<h2 class="titre">Histoire</h2>
-					<h3>BIPS association loi 1901, bla bla bla bla
-					</h3>
-					</p>
+					<?php include("bips.php"); ?>
+				</span>
+				<span id="clubs_contenu" class="non-visible">
+					<?php include("clubs.php"); ?>
+				</span>
+				<span id="boutique_contenu" class="non-visible">
+					<?php include("boutique.php"); ?>
+				</span>
+				<span id="events_contenu" class="non-visible">
+					<?php include("events.php"); ?>
+				</span>
+				<span id="journal_contenu" class="non-visible">
+					<?php include("journal.php"); ?>
 				</span>
 			</section>
 		</div>		
