@@ -1,0 +1,93 @@
+.onglets{
+	position: relative;
+	border-top: 1px solid rgb(220, 220, 220);
+	top: 30px;
+	margin-left: 10px;
+	margin-bottom: 100px;
+	text-align: center;
+}
+body{
+	background-color: rgb(230, 230, 230);
+	font-family: 'Lato', sans-serif;
+}
+.globale{
+	margin: 0px;
+	background-color: white;
+	width:1024px;
+	min-height: 850px;
+	text-align: center;
+	margin-left:auto;
+	margin-right:auto;
+	padding: 10px;
+	padding-right: 20px;
+}
+.onglet_hoverable:hover{
+	background-color: rgb(220, 220, 220);
+	border-top: 1px solid rgb(220, 220, 220);
+}
+.onglet{
+	margin-left: 0px;
+	margin-top: 10px;
+	margin-right: -5px;
+	padding: 7px;
+	padding-left: 10px;
+	padding-right: 10px;
+	border-right: 1px solid rgb(220, 220, 220);
+	cursor: pointer;
+	font-size: 18px;
+	font-family: Arial;
+	text-align: left;
+	position: relative;
+	right: 130px;
+	top: 6px;
+}
+.menu{
+	float: left;
+	display: inline-block;
+	position: relative;
+	bottom: 25px;
+}
+section{
+	margin-left: 285px;
+}
+footer{
+	width:1048px;
+	margin-left:auto;
+	margin-right:auto;
+	text-align: center;
+	color: white;
+	background-color: black;
+}
+.onglet_choisi{	
+	background-color: rgb(0, 50, 120);
+	color: white;
+}
+.titre{
+	text-decoration : underline;
+	text-align: justify;
+}
+th{
+	text-align: left;
+}
+th, td{
+	padding: 5px;
+}
+p{
+	text-align:left;
+}
+h2{
+	text-decoration : underline;
+	text-align: justify;
+}
+h3{
+	font-size: 14px;
+	font-family: Arial;
+	font-weight:normal;
+	text-align: justify;
+}
+.visible{
+	display:block;
+}
+.non-visible{
+	display:none;
+}
