@@ -28,19 +28,18 @@
 			}
 			function changeClub(club){
 				if(anc_onglet_club != 'presentation'){
-					if(document.getElementById(anc_onglet_club).className == 'onglet_choisi club clubHaut'){
-						document.getElementById(anc_onglet_club).className = 'onglet_hoverable club clubHaut';
+					if(document.getElementById(anc_onglet_club).className == 'col-lg-2 onglet_choisi club clubHaut'){
+						document.getElementById(anc_onglet_club).className = 'col-lg-2 onglet_hoverable club clubHaut';
 					}
 					else{
-						document.getElementById(anc_onglet_club).className = 'onglet_hoverable club clubBas';
+						document.getElementById(anc_onglet_club).className = 'col-lg-2 onglet_hoverable club clubBas';
 					}
 				}
-					
-				if(document.getElementById(club).className == 'onglet_hoverable club clubHaut'){
-					document.getElementById(club).className = 'onglet_choisi club clubHaut';
+				if(document.getElementById(club).className == 'col-lg-2 onglet_hoverable club clubHaut'){
+					document.getElementById(club).className = 'col-lg-2 onglet_choisi club clubHaut';
 				}
 				else{
-					document.getElementById(club).className = 'onglet_choisi club clubBas';
+					document.getElementById(club).className = 'col-lg-2 onglet_choisi club clubBas';
 				}
 
 				document.getElementById(anc_onglet_club+'_contenu').className = 'non-visible';
@@ -49,11 +48,11 @@
 			}
 			function resetClub(){
 				if(anc_onglet_club != 'presentation'){
-					if(document.getElementById(anc_onglet_club).className == 'onglet_choisi club clubHaut'){
-						document.getElementById(anc_onglet_club).className = 'onglet_hoverable club clubHaut';
+					if(document.getElementById(anc_onglet_club).className == 'col-lg-2 onglet_choisi club clubHaut'){
+						document.getElementById(anc_onglet_club).className = 'col-lg-2 onglet_hoverable club clubHaut';
 					}
 					else{
-						document.getElementById(anc_onglet_club).className = 'onglet_hoverable club clubBas';
+						document.getElementById(anc_onglet_club).className = 'col-lg-2 onglet_hoverable club clubBas';
 					}
 					document.getElementById(anc_onglet_club+'_contenu').className = 'non-visible';
 					document.getElementById('presentation_contenu').className = 'visible';
@@ -164,6 +163,8 @@
 			}
 			var anc_onglet = getQuerystring('page');
 			changePage(anc_onglet);
+
+			var anc_onglet_club = 'presentation';
 			//-->
 		</script>
 </html>
