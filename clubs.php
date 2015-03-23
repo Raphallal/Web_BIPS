@@ -3,10 +3,10 @@
 	<span class="col-lg-2 onglet_hoverable club clubHaut" id="bds" onclick="changeClub('bds');">BDS</span>
 	<span class="col-lg-2 onglet_hoverable club clubHaut" id="capps" onclick="changeClub('capps');">CAPPS</span>
 	<span class="col-lg-2 onglet_hoverable club clubHaut" id="cinefips" onclick="changeClub('cinefips');">CinéFips</span>
-	<span class="col-lg-2 onglet_hoverable club clubHaut" id="clubactus" onclick="changeClub('clubactus');">Club Actus</span>
-	<span class="col-lg-2 onglet_hoverable club clubHaut" id="cohesion" onclick="changeClub('cohesion');">Cohésion</span>
-	<span class="col-lg-2 onglet_hoverable club clubHaut" id="journal" onclick="changeClub('journal');">Journal</span>
-	<br>
+	<span class="col-lg-3 onglet_hoverable club clubHaut" id="clubactus" onclick="changeClub('clubactus');">Club Actus</span>
+	<span class="col-lg-3 onglet_hoverable club clubHaut" id="cohesion" onclick="changeClub('cohesion');">Cohésion</span>
+	<br>	
+	<span class="col-lg-2 onglet_hoverable club clubBas" id="journal" onclick="changeClub('journal');">Journal</span>
 	<span class="col-lg-2 onglet_hoverable club clubBas" id="kfet" onclick="changeClub('kfet');">KFet</span>
 	<span class="col-lg-2 onglet_hoverable club clubBas" id="pompom" onclick="changeClub('pompom');">PomPom</span>
 	<span class="col-lg-2 onglet_hoverable club clubBas" id="popsgames" onclick="changeClub('popsgames');">PopsGames</span>

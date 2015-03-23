@@ -1,30 +1,3 @@
-.onglets_club{
-	border-top: 2px solid rgb(220, 220, 220);
-	text-align: center;
-}
-.club{
-	/*padding: 7px;*/
-	padding-left: 27px;
-	padding-right: 27px;
-	border-left: 1px solid rgb(220, 220, 220);
-	border-right: 1px solid rgb(220, 220, 220);
-	cursor: pointer;
-	font-size: 18px;
-	font-family: Arial;
-	text-align: left;
-}
-.clubHaut{
-	border-bottom: 2px solid rgb(220, 220, 220);
-	text-align: center;
-}
-.clubBas{
-	border-bottom: 2px solid rgb(220, 220, 220);
-	text-align: center;
-}
-.sectionClub{
-	
-}
-
 .onglets{
 	margin-top: 10px;
 	border-top: 1px solid rgb(220, 220, 220);
@@ -93,4 +66,30 @@ h3{
 }
 .non-visible{
 	display:none;
+}
+.onglets_club{
+	border-top: 2px solid rgb(220, 220, 220);
+	text-align: center;
+}
+.club{
+	/*padding: 7px;*/
+	padding-left: 27px;
+	padding-right: 27px;
+	border-left: 1px solid rgb(220, 220, 220);
+	border-right: 1px solid rgb(220, 220, 220);
+	cursor: pointer;
+	font-size: 18px;
+	font-family: Arial;
+	text-align: left;
+}
+.clubHaut{
+	border-bottom: 2px solid rgb(220, 220, 220);
+	text-align: center;
+}
+.clubBas{
+	border-bottom: 2px solid rgb(220, 220, 220);
+	text-align: center;
+}
+.sectionClub{
+	
 }

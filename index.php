@@ -9,10 +9,10 @@
 		<title>BIPS -- Homepage</title>
 		<link href="css/bootstrap.css" rel="stylesheet" type='text/css'>
 		<link href='http://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
-		<link rel="stylesheet" href="style_BIPS.css" type="text/css">
-		<link href="css/bootstrap.css" rel="stylesheet" type="text/css">
+		<link rel="stylesheet" href="css/style_BIPS.css" type="text/css">
 		<script type="text/javascript">
 			function changePage(page){
+				resetClub();
 				if(page == 'galerie')
 					location.href="galerie.php";
 				if(page == 'annales')
@@ -28,20 +28,29 @@
 			}
 			function changeClub(club){
 				if(anc_onglet_club != 'presentation'){
-					if(document.getElementById(anc_onglet_club).className == 'col-lg-2 onglet_choisi club clubHaut'){
-						document.getElementById(anc_onglet_club).className = 'col-lg-2 onglet_hoverable club clubHaut';
+					if(anc_onglet_club == 'clubactus' || anc_onglet_club == 'cohesion'){
+						document.getElementById(anc_onglet_club).className = 'col-lg-3 onglet_hoverable club clubHaut';
 					}
 					else{
-						document.getElementById(anc_onglet_club).className = 'col-lg-2 onglet_hoverable club clubBas';
+						if(document.getElementById(anc_onglet_club).className == 'col-lg-2 onglet_choisi club clubHaut'){
+							document.getElementById(anc_onglet_club).className = 'col-lg-2 onglet_hoverable club clubHaut';
+						}
+						else{
+							document.getElementById(anc_onglet_club).className = 'col-lg-2 onglet_hoverable club clubBas';
+						}
 					}
 				}
-				if(document.getElementById(club).className == 'col-lg-2 onglet_hoverable club clubHaut'){
-					document.getElementById(club).className = 'col-lg-2 onglet_choisi club clubHaut';
+				if(club == 'clubactus' || club == 'cohesion'){
+					document.getElementById(club).className = 'col-lg-3 onglet_choisi club clubHaut';
 				}
 				else{
-					document.getElementById(club).className = 'col-lg-2 onglet_choisi club clubBas';
+					if(document.getElementById(club).className == 'col-lg-2 onglet_hoverable club clubHaut'){
+						document.getElementById(club).className = 'col-lg-2 onglet_choisi club clubHaut';
+					}
+					else{
+						document.getElementById(club).className = 'col-lg-2 onglet_choisi club clubBas';
+					}
 				}
-
 				document.getElementById(anc_onglet_club+'_contenu').className = 'non-visible';
 				document.getElementById(club+'_contenu').className = 'visible';
 				anc_onglet_club = club;
@@ -72,7 +81,7 @@
 			<nav class="col-lg-12 onglets">
 				<span class="col-lg-1 onglet onglet_hoverable" id="index_onglet" onclick="changePage('index');">Accueil</span>
 				<span class="col-lg-1 onglet onglet_hoverable" id="bips_onglet" onclick="changePage('bips');">BIPS</span>
-				<span class="col-lg-1 onglet onglet_hoverable" id="clubs_onglet" onclick="changePage('clubs');">Les clubs</span>
+				<span class="col-lg-1 onglet onglet_hoverable" id="clubs_onglet" onclick="changePage('clubs');">Clubs</span>
 				<span class="col-lg-1 onglet onglet_hoverable" id="boutique_onglet" onclick="changePage('boutique');">Boutique</span>
 				<span class="col-lg-1 onglet onglet_hoverable" id="events_onglet" onclick="changePage('events');">Events</span>
 				<span class="col-lg-1 onglet onglet_hoverable" id="galerie_onglet" onclick="changePage('galerie')">Galerie</span>
@@ -161,10 +170,9 @@
 			   else				
 					return qs[1];
 			}
-			var anc_onglet = getQuerystring('page');
-			changePage(anc_onglet);
-
+			var anc_onglet = getQuerystring('page');			
 			var anc_onglet_club = 'presentation';
+			changePage(anc_onglet);
 			//-->
 		</script>
 </html>
