@@ -57,11 +57,16 @@
 			}
 			function resetClub(){
 				if(anc_onglet_club != 'presentation'){
-					if(document.getElementById(anc_onglet_club).className == 'col-lg-2 onglet_choisi club clubHaut'){
-						document.getElementById(anc_onglet_club).className = 'col-lg-2 onglet_hoverable club clubHaut';
+					if(anc_onglet_club == 'clubactus' || anc_onglet_club == 'cohesion'){
+						document.getElementById(anc_onglet_club).className = 'col-lg-3 onglet_hoverable club clubHaut';
 					}
 					else{
-						document.getElementById(anc_onglet_club).className = 'col-lg-2 onglet_hoverable club clubBas';
+						if(document.getElementById(anc_onglet_club).className == 'col-lg-2 onglet_choisi club clubHaut'){
+							document.getElementById(anc_onglet_club).className = 'col-lg-2 onglet_hoverable club clubHaut';
+						}
+						else{
+							document.getElementById(anc_onglet_club).className = 'col-lg-2 onglet_hoverable club clubBas';
+						}
 					}
 					document.getElementById(anc_onglet_club+'_contenu').className = 'non-visible';
 					document.getElementById('presentation_contenu').className = 'visible';
