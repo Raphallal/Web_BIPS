@@ -93,3 +93,26 @@ h3{
 .sectionClub{
 	
 }
+
+.an_bar{
+	border: 1px solid rgb(30,144,255);
+	line-height : 30px;
+	border-radius: 15px;
+	height:30px;
+	background-color: rgb(30,144,255);
+	color : white;
+}
+
+.an_bar_subtab{
+	margin-bottom: 10px;
+}
+
+.an_bar_subtab td{
+	border:1px solid black;
+	border-top : 0px;
+}
+.an_bar_subtab td:hover{
+	border:1px solid black;
+	border-top : 0px;
+	background-color: rgb(220,220,220);
+}
