@@ -1,62 +1,35 @@
 .onglets{
-	position: relative;
+	margin-top: 10px;
 	border-top: 1px solid rgb(220, 220, 220);
-	top: 30px;
-	margin-left: 10px;
-	margin-bottom: 100px;
-	text-align: center;
+	padding: 5px;
 }
 body{
 	background-color: rgb(230, 230, 230);
 	font-family: 'Lato', sans-serif;
 }
 .globale{
-	margin: 0px;
 	background-color: white;
-	width:1024px;
-	min-height: 850px;
-	text-align: center;
-	margin-left:auto;
-	margin-right:auto;
-	padding: 10px;
-	padding-right: 20px;
 }
 .onglet_hoverable:hover{
 	background-color: rgb(220, 220, 220);
-	border-top: 1px solid rgb(220, 220, 220);
 }
 .onglet{
-	margin-left: 0px;
-	margin-top: 10px;
-	margin-right: -5px;
-	padding: 7px;
-	padding-left: 10px;
-	padding-right: 10px;
 	border-right: 1px solid rgb(220, 220, 220);
 	cursor: pointer;
 	font-size: 18px;
 	font-family: Arial;
-	text-align: left;
+	text-align: center;
+	padding: 5px;
 	position: relative;
-	right: 130px;
-	top: 6px;
+	top: -6px;
 }
 .menu{
-	float: left;
 	display: inline-block;
-	position: relative;
-	bottom: 25px;
-}
-section{
-	margin-left: 285px;
 }
 footer{
-	width:1048px;
-	margin-left:auto;
-	margin-right:auto;
-	text-align: center;
 	color: white;
 	background-color: black;
+	text-align: center;
 }
 .onglet_choisi{	
 	background-color: rgb(0, 50, 120);
@@ -77,7 +50,10 @@ p{
 }
 h2{
 	text-decoration : underline;
+	font-weight : bold;
 	text-align: justify;
+	font-size: 22px;
+	color: rgb(0, 30, 95);
 }
 h3{
 	font-size: 14px;
@@ -90,4 +66,30 @@ h3{
 }
 .non-visible{
 	display:none;
+}
+.onglets_club{
+	border-top: 2px solid rgb(220, 220, 220);
+	text-align: center;
+}
+.club{
+	/*padding: 7px;*/
+	padding-left: 27px;
+	padding-right: 27px;
+	border-left: 1px solid rgb(220, 220, 220);
+	border-right: 1px solid rgb(220, 220, 220);
+	cursor: pointer;
+	font-size: 18px;
+	font-family: Arial;
+	text-align: left;
+}
+.clubHaut{
+	border-bottom: 2px solid rgb(220, 220, 220);
+	text-align: center;
+}
+.clubBas{
+	border-bottom: 2px solid rgb(220, 220, 220);
+	text-align: center;
+}
+.sectionClub{
+	
 }
