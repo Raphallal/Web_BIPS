@@ -28,27 +28,39 @@
 			}
 			function changeClub(club){
 				if(anc_onglet_club != 'presentation'){
-					if(anc_onglet_club == 'clubactus' || anc_onglet_club == 'cohesion'){
-						document.getElementById(anc_onglet_club).className = 'col-lg-3 onglet_hoverable club clubHaut';
+					if(anc_onglet_club == 'clubactus'){
+						document.getElementById(anc_onglet_club).className = 'col-lg-3 onglet_hoverable onglet_club';
+					}
+					else if(anc_onglet_club == 'cohesion'){
+						document.getElementById(anc_onglet_club).className = 'col-lg-3 onglet_hoverable onglet_club_droite';
+					}
+					else if(anc_onglet_club == 'zikifips'){
+						document.getElementById(anc_onglet_club).className = 'col-lg-2 onglet_hoverable onglet_club_droite';
 					}
 					else{
-						if(document.getElementById(anc_onglet_club).className == 'col-lg-2 onglet_choisi club clubHaut'){
-							document.getElementById(anc_onglet_club).className = 'col-lg-2 onglet_hoverable club clubHaut';
+						if(document.getElementById(anc_onglet_club).className == 'col-lg-2 onglet_choisi onglet_club'){
+							document.getElementById(anc_onglet_club).className = 'col-lg-2 onglet_hoverable onglet_club';
 						}
 						else{
-							document.getElementById(anc_onglet_club).className = 'col-lg-2 onglet_hoverable club clubBas';
+							document.getElementById(anc_onglet_club).className = 'col-lg-2 onglet_hoverable onglet_club';
 						}
 					}
 				}
-				if(club == 'clubactus' || club == 'cohesion'){
-					document.getElementById(club).className = 'col-lg-3 onglet_choisi club clubHaut';
+				if(club == 'clubactus'){
+					document.getElementById(club).className = 'col-lg-3 onglet_choisi onglet_club';
+				}
+				else if(club == 'cohesion'){
+					document.getElementById(club).className = 'col-lg-3 onglet_choisi onglet_club_droite';
+				}
+				else if(club == 'zikifips'){
+					document.getElementById(club).className = 'col-lg-2 onglet_choisi onglet_club_droite';
 				}
 				else{
-					if(document.getElementById(club).className == 'col-lg-2 onglet_hoverable club clubHaut'){
-						document.getElementById(club).className = 'col-lg-2 onglet_choisi club clubHaut';
+					if(document.getElementById(club).className == 'col-lg-2 onglet_hoverable onglet_club'){
+						document.getElementById(club).className = 'col-lg-2 onglet_choisi onglet_club';
 					}
 					else{
-						document.getElementById(club).className = 'col-lg-2 onglet_choisi club clubBas';
+						document.getElementById(anc_onglet_club).className = 'col-lg-2 onglet_choisi onglet_club';
 					}
 				}
 				document.getElementById(anc_onglet_club+'_contenu').className = 'non-visible';
@@ -57,15 +69,21 @@
 			}
 			function resetClub(){
 				if(anc_onglet_club != 'presentation'){
-					if(anc_onglet_club == 'clubactus' || anc_onglet_club == 'cohesion'){
-						document.getElementById(anc_onglet_club).className = 'col-lg-3 onglet_hoverable club clubHaut';
+					if(anc_onglet_club == 'clubactus'){
+						document.getElementById(anc_onglet_club).className = 'col-lg-3 onglet_hoverable onglet_club';
+					}
+					else if(anc_onglet_club == 'cohesion'){
+						document.getElementById(anc_onglet_club).className = 'col-lg-3 onglet_hoverable onglet_club_droite';
+					}
+					else if(anc_onglet_club == 'zikifips'){
+						document.getElementById(anc_onglet_club).className = 'col-lg-2 onglet_hoverable onglet_club_droite';
 					}
 					else{
-						if(document.getElementById(anc_onglet_club).className == 'col-lg-2 onglet_choisi club clubHaut'){
-							document.getElementById(anc_onglet_club).className = 'col-lg-2 onglet_hoverable club clubHaut';
+						if(document.getElementById(anc_onglet_club).className == 'col-lg-2 onglet_choisi onglet_club'){
+							document.getElementById(anc_onglet_club).className = 'col-lg-2 onglet_hoverable onglet_club';
 						}
 						else{
-							document.getElementById(anc_onglet_club).className = 'col-lg-2 onglet_hoverable club clubBas';
+							document.getElementById(anc_onglet_club).className = 'col-lg-2 onglet_hoverable onglet_club';
 						}
 					}
 					document.getElementById(anc_onglet_club+'_contenu').className = 'non-visible';
