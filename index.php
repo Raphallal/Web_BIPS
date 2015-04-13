@@ -153,7 +153,7 @@
 						   </tr>
 						</table>
 					</form>
-					<p><a href="createAccount.html" target="_blank">Créer un compte</a></p>
+					<p><a href="creation_compte.php">Créer un compte</a></p>
 					<p><a href="passForgot.html" target="_blank">Mot de passe oublié ?</a></p>
 				</nav>
 				<section class="col-lg-9">
