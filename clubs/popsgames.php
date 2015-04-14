@@ -1,5 +1,5 @@
 <?php
-$req = $bdd->query('SELECT titre, contenu FROM article WHERE idpage = 9');
+$req = $bdd->query('SELECT titre, contenu FROM article WHERE idpage = 15');
 while ($donnees = $req->fetch()){
 	echo '<p>';
 	echo '<h2 class="titre">' . $donnees['titre'] . '</h2>';

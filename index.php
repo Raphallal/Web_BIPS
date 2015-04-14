@@ -157,6 +157,7 @@
 					<p><a href="passForgot.html" target="_blank">Mot de passe oublié ?</a></p>
 				</nav>
 				<section class="col-lg-9">
+					<?php include("connexion_bd_bips.php"); ?>
 					<span id="index_contenu" class="non-visible">
 						<?php include("accueil.php"); ?>
 					</span>

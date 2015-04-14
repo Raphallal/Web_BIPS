@@ -43,9 +43,6 @@ body{
 	font-family: Arial;
 	text-align: center;
 	padding: 5px;
-	position: relative;
-	top: -3px;
-	left: -2px;
 }
 .menu{
 	display: inline-block;

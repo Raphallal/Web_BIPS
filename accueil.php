@@ -1,3 +1,17 @@
+<?php
+$req = $bdd->query('SELECT titre, contenu FROM article WHERE idpage = 1 ORDER BY date DESC');
+while ($donnees = $req->fetch()){
+	echo '<p>';
+	echo '<h2 class="titre">' . $donnees['titre'] . '</h2>';
+    echo '<h3>' . $donnees['contenu'] . '</h3>';
+	echo '</p>';
+}
+$req->closeCursor();
+?>
+<?php
+/*
+
+
 <p>
 	<h2 class="titre">Bienvenue</h2>
 	<h3>Quibus occurrere bene pertinax miles explicatis ordinibus parans hastisque feriens scuta qui habitus iram pugnantium concitat et dolorem proximos iam gestu terrebat
@@ -27,3 +41,5 @@
 	neque erat umquam controversia, quid ego intellegerem, sed quid probarem.<br />
 	</h3>
 </p>
+*/
+?>
