@@ -1,4 +1,15 @@
-﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+﻿<?php session_start()  ; 
+	if( !isset($_SESSION['logged'] ) || !isset($_SESSION['admin']) || !isset($_SESSION['username']) )
+	{
+		$_SESSION['logged'] = false ; 
+		$_SESSION['admin'] = false ; 
+		$_SESSION['username'] = NULL ; 
+		$_SESSION['filiere'] = NULL ; 
+ 		$_SESSION['annee'] = NULL ; 
+ 		$_SESSION['spe'] = NULL ; 
+	}
+?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html slick-uniqueid="3" xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr-fr" dir="ltr" lang="fr-fr">
 	<head>
 		<!-- base href="http://www.bips-asso.fr/" -->
