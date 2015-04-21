@@ -10,6 +10,7 @@
 		<link href="css/bootstrap.css" rel="stylesheet" type='text/css'>
 		<link href='http://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
 		<link rel="stylesheet" href="css/style_BIPS.css" type="text/css">
+		<script type="text/javascript" src="js/jquery-2.1.3.js"></script>
 		<script type="text/javascript">
 			function changePage(page){
 				resetClub();
@@ -115,16 +116,14 @@
 			<div class="row">
 				<nav class="col-lg-3 menu">
 					<p>
-					<h2>Nous suivre</h2>
-					<h3>Sur Twitter</h3>
+					<h2>Nous suivre</h2><br/>
 					<a href="https://twitter.com/AssoBIPS?lang=fr">
 					<img src="images/twitter.JPG" alt="Twitter" title="Twitter" />
 					</a>
 					<?php/* include("follow_button.htm"); */?>
 					<br>
-					<h3>Sur facebook</h3>
 					<a href="https://www.facebook.com/bipsparissud?fref=ts">
-					<img src="images/facebook.png" width="80" height="50" alt="Facebook" title="Facebook" />
+					<img src="images/facebook.png" width="200" height="50" alt="Facebook" title="Facebook" />
 					</a>
 					<?php  /*?>
 					<br><br>

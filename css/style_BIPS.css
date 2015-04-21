@@ -78,7 +78,7 @@ h2{
 }
 h3{
 	font-size: 14px;
-	font-family: Arial;
+	Line-Height: 1.15;
 	font-weight:normal;
 	text-align: justify;
 }
@@ -88,6 +88,65 @@ h3{
 .non-visible{
 	display:none;
 }
-.sectionClub{
-	
+br{
+	display: block;
+	margin: 5px 0;
+}
+.thBoutique{
+	color: rgb(17, 136, 215);
+	font-weight : bold;
+	text-align: center;
+}
+.tdBoutique{
+	text-align: center;
+}
+.boutique{
+	width:100%;
+	overflow:hidden;
+    border-collapse: collapse;
+}
+.rouge{
+	color: red;
+	font-weight : bold;
+}
+.dore{
+	color: gold;
+	font-weight : bold;
+}
+
+.header-fixed > thead,
+.header-fixed > tbody,
+.header-fixed > thead > tr,
+.header-fixed > tbody > tr,
+.header-fixed > thead > tr > th,
+.header-fixed > tbody > tr > td {
+    display: block;
+}
+.header-fixed > tbody > tr:after,
+.header-fixed > thead > tr:after {
+    content: ' ';
+    display: block;
+    visibility: hidden;
+    clear: both;
+}
+.header-fixed > tbody {
+    overflow-y: auto;
+    height: 450px;
+}
+.header-fixed > tbody > tr > td ,
+.header-fixed > thead > tr > th {
+    float: left;
+}
+
+.fondGris{
+	background-color: rgb(153, 204, 255);
+}
+.petit{
+	width: 17%;
+}
+.mid{
+	width: 17%;
+}
+.grand{
+	width: 32%;
 }
