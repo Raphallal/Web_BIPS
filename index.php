@@ -21,6 +21,8 @@
 		<link href="css/bootstrap.css" rel="stylesheet" type='text/css'>
 		<link href='http://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
 		<link rel="stylesheet" href="css/style_BIPS.css" type="text/css">
+		<script type="text/javascript" src="./ckeditor/ckeditor.js"></script>
+		<script type="text/javascript" src="./js/scriptEditor.js"></script>
 		<script type="text/javascript">
 			function changePage(page){
 				resetClub();
