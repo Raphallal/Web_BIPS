@@ -48,21 +48,27 @@
  					$_SESSION['annee'] = $bdd_fetch['annee'] ; 
  					$_SESSION['spe'] = $bdd_fetch['spe'] ; 
 					?>
-						<meta http-equiv="refresh" content="2; URL=index.php?page=bips">
+						<meta http-equiv="refresh" content="2; URL=index.php">
 					<?php
 				}
 				else{
-					/* connection attempt failed */ 
-						$_SESSION['logged'] = false ; 
-						$_SESSION['admin'] = false ; 
-						$_SESSION['username'] = NULL ; 
-						$_SESSION['filiere'] = NULL ; 
-				 		$_SESSION['annee'] = NULL ; 
-				 		$_SESSION['spe'] = NULL ; 
-					?>
-						<meta http-equiv="refresh" content="2; URL=index.php?page=clubs">
-					<?php					
-				}
+				/* connection attempt failed */ 
+					$_SESSION['logged'] = false ; 
+					$_SESSION['admin'] = false ; 
+					$_SESSION['username'] = NULL ; 
+					$_SESSION['filiere'] = NULL ; 
+			 		$_SESSION['annee'] = NULL ; 
+			 		$_SESSION['spe'] = NULL ; 
+			 		?>
+						<meta http-equiv="refresh" content="2; URL=index.php">
+					<?php
+				}					
+			}
+			else if( isset($_GET['d']) && strcmp(mysql_real_escape_string($_GET['d']), "disconnect")==0 ){
+				session_destroy() ; 
+				?>
+				<meta http-equiv="refresh" content="0; URL=index.php">
+				<?php 
 			}
 			else
 			{	
@@ -73,7 +79,7 @@
 				$_SESSION['annee'] = NULL ; 
 				$_SESSION['spe'] = NULL ; 
 				?>
-					<meta http-equiv="refresh" content="2; URL=index.php?page=index">
+					<meta http-equiv="refresh" content="2; URL=index.php">
 				<?php
 			}
 		?>
@@ -92,51 +98,22 @@
 			</nav>
 			</div>
 			<div class="row">
-				<nav class="col-lg-3 menu">
-					<p>
-					<h2>Nous suivre</h2>
-					<h3>Sur Twitter</h3>
-					<a href="https://twitter.com/AssoBIPS?lang=fr">
-					<img src="images/twitter.JPG" alt="Twitter" title="Twitter" />
-					</a>
-					<br>
-					<h3>Sur facebook</h3>
-					<a href="https://www.facebook.com/bipsparissud?fref=ts">
-					<img src="images/facebook.png" width="80" height="50" alt="Facebook" title="Facebook" />
-					</a>
-					</p>
-					<form action="enregistrement.php" method="post"> 
-						<table>
-							<tr>
-								<td colspan="2"><h2>Connexion</h2></th>
-							</tr>
-						   <tr>
-							   <th>Identifiant </th>
-							   <td><input type="text" name="iden" id="iden"/></td>
-						   </tr>
-						   <tr>
-							   <th>Mot de passe </th>
-							   <td><input type="password" name="passwd" id="passwd"/></td>
-						   </tr>
-						   <tr>
-							   <th></th>
-							   <td><input type="submit" value="Se connecter" /></td>
-						   </tr>
-						</table>
-					</form>
-					<p><a href="createAccount.html" >Créer un compte</a></p>
-					<p><a href="passForgot.html" target="_blank">Mot de passe oublié ?</a></p>
-				</nav>
+				<?php include("module_connexion.php"); ?> 
 				<section class="col-lg-9">
 					<div margin="25px">
 					<?php 
 						if( isset($_SESSION['logged']) && $_SESSION['logged']== true  ){
 							?>
-								Vous vous êtes bien enregistré. Redirection vers l'accueil du site. 
+								Vous vous êtes bien enregistré. <br><a href="index.php">Redirection vers l'accueil du site. </a>
 							<?php
-						}else{
+						}else if(isset($_GET['d']) && strcmp(mysql_real_escape_string($_GET['d']), "disconnect")==0  ){
 							?>
-								Échec de la connexion. Redirection vers l'accueil du site. 
+								Déconnexion réussie. <br><a href="index.php">Redirection vers l'accueil du site. </a>
+							<?php
+						}
+						else{
+							?>
+								Échec de la connexion. <br><a href="index.php">Redirection vers l'accueil du site. </a>
 							<?php
 						}
 					 ?>
