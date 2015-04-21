@@ -104,7 +104,7 @@
 			}
 		</script>
 	</head>
-	<body>
+	<body onload="droitModif()">
 		<div class="globale container">
 			<header class="row">
 			<div class="col-lg-12">
