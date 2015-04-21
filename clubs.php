@@ -24,6 +24,8 @@
 			</h3>
 		</p>
 	</span>
+	<!-- <button id="modifButton" class="non-visible">Modifier</button> -->
+
 	<span id="bds_contenu" class="non-visible">
 		<?php include("clubs/bds.php"); ?>
 	</span>
@@ -31,6 +33,9 @@
 		<?php include("clubs/capps.php"); ?>
 	</span>
 	<span id="cinefips_contenu" class="non-visible">
+		<input type="submit" id="modifCine" class="non-visible col-lg-12" value="Modifier" onclick="modifier('Cine',this.value, 'cinefips.php')" />
+		<br>
+		<br>
 		<?php include("clubs/cinefips.php"); ?>
 	</span>
 	<span id="clubactus_contenu" class="non-visible">
