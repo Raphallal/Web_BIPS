@@ -24,61 +24,67 @@
 		<script type="text/javascript" src="./ckeditor/ckeditor.js"></script>
 		<script type="text/javascript" src="./js/scriptEditor.js"></script>
 		<script type="text/javascript">
+			//variable d'alerte si un veut quitter une page avec des modifications en cours
+			var alertNoChange = 0;
 			function changePage(page){
-				resetClub();
-				if(page == 'galerie')
-					location.href="galerie.php";
-				if(page == 'annales')
-					location.href="";
-				else{
-					document.getElementById(anc_onglet+'_onglet').className = 'col-lg-1 onglet onglet_hoverable';
-					document.getElementById(page+'_onglet').className = 'col-lg-1 onglet onglet_choisi';
-					document.getElementById(anc_onglet+'_contenu').className = 'non-visible';
-					document.getElementById(page+'_contenu').className = 'visible';
-					anc_onglet = page;
-					window.history.pushState(document.title,document.title,"?page="+page);
+				if(alertNoChange == 0){
+					resetClub();
+					if(page == 'galerie')
+						location.href="galerie.php";
+					if(page == 'annales')
+						location.href="";
+					else{
+						document.getElementById(anc_onglet+'_onglet').className = 'col-lg-1 onglet onglet_hoverable';
+						document.getElementById(page+'_onglet').className = 'col-lg-1 onglet onglet_choisi';
+						document.getElementById(anc_onglet+'_contenu').className = 'non-visible';
+						document.getElementById(page+'_contenu').className = 'visible';
+						anc_onglet = page;
+						window.history.pushState(document.title,document.title,"?page="+page);
+					}
 				}
 			}
 			function changeClub(club){
-				if(anc_onglet_club != 'presentation'){
-					if(anc_onglet_club == 'clubactus'){
-						document.getElementById(anc_onglet_club).className = 'col-lg-3 onglet_hoverable onglet_club';
-					}
-					else if(anc_onglet_club == 'cohesion'){
-						document.getElementById(anc_onglet_club).className = 'col-lg-3 onglet_hoverable onglet_club_droite';
-					}
-					else if(anc_onglet_club == 'zikifips'){
-						document.getElementById(anc_onglet_club).className = 'col-lg-2 onglet_hoverable onglet_club_droite';
-					}
-					else{
-						if(document.getElementById(anc_onglet_club).className == 'col-lg-2 onglet_choisi onglet_club'){
-							document.getElementById(anc_onglet_club).className = 'col-lg-2 onglet_hoverable onglet_club';
+				if(alertNoChange == 0){
+					if(anc_onglet_club != 'presentation'){
+						if(anc_onglet_club == 'clubactus'){
+							document.getElementById(anc_onglet_club).className = 'col-lg-3 onglet_hoverable onglet_club';
+						}
+						else if(anc_onglet_club == 'cohesion'){
+							document.getElementById(anc_onglet_club).className = 'col-lg-3 onglet_hoverable onglet_club_droite';
+						}
+						else if(anc_onglet_club == 'zikifips'){
+							document.getElementById(anc_onglet_club).className = 'col-lg-2 onglet_hoverable onglet_club_droite';
 						}
 						else{
-							document.getElementById(anc_onglet_club).className = 'col-lg-2 onglet_hoverable onglet_club';
+							if(document.getElementById(anc_onglet_club).className == 'col-lg-2 onglet_choisi onglet_club'){
+								document.getElementById(anc_onglet_club).className = 'col-lg-2 onglet_hoverable onglet_club';
+							}
+							else{
+								document.getElementById(anc_onglet_club).className = 'col-lg-2 onglet_hoverable onglet_club';
+							}
 						}
 					}
-				}
-				if(club == 'clubactus'){
-					document.getElementById(club).className = 'col-lg-3 onglet_choisi onglet_club';
-				}
-				else if(club == 'cohesion'){
-					document.getElementById(club).className = 'col-lg-3 onglet_choisi onglet_club_droite';
-				}
-				else if(club == 'zikifips'){
-					document.getElementById(club).className = 'col-lg-2 onglet_choisi onglet_club_droite';
-				}
-				else{
-					if(document.getElementById(club).className == 'col-lg-2 onglet_hoverable onglet_club'){
-						document.getElementById(club).className = 'col-lg-2 onglet_choisi onglet_club';
+					if(club == 'clubactus'){
+						document.getElementById(club).className = 'col-lg-3 onglet_choisi onglet_club';
+					}
+					else if(club == 'cohesion'){
+						document.getElementById(club).className = 'col-lg-3 onglet_choisi onglet_club_droite';
+					}
+					else if(club == 'zikifips'){
+						document.getElementById(club).className = 'col-lg-2 onglet_choisi onglet_club_droite';
 					}
 					else{
-						document.getElementById(anc_onglet_club).className = 'col-lg-2 onglet_choisi onglet_club';
+						if(document.getElementById(club).className == 'col-lg-2 onglet_hoverable onglet_club'){
+							document.getElementById(club).className = 'col-lg-2 onglet_choisi onglet_club';
+						}
+						else{
+							document.getElementById(anc_onglet_club).className = 'col-lg-2 onglet_choisi onglet_club';
+						}
 					}
+					document.getElementById(anc_onglet_club+'_contenu').className = 'non-visible';
+					document.getElementById(club+'_contenu').className = 'visible';
+					anc_onglet_club = club;
 				}
-				document.getElementById(anc_onglet_club+'_contenu').className = 'non-visible';
-				document.getElementById(club+'_contenu').className = 'visible';
-				anc_onglet_club = club;
 			}
 			function resetClub(){
 				if(anc_onglet_club != 'presentation'){
@@ -115,14 +121,14 @@
 			</header>
 			<div class="row">
 			<nav class="col-lg-12 onglets">
-				<span class="col-lg-1 onglet onglet_hoverable" id="index_onglet" onclick="changePage('index');">Accueil</span>
-				<span class="col-lg-1 onglet onglet_hoverable" id="bips_onglet" onclick="changePage('bips');">BIPS</span>
-				<span class="col-lg-1 onglet onglet_hoverable" id="clubs_onglet" onclick="changePage('clubs');">Clubs</span>
-				<span class="col-lg-1 onglet onglet_hoverable" id="boutique_onglet" onclick="changePage('boutique');">Boutique</span>
-				<span class="col-lg-1 onglet onglet_hoverable" id="events_onglet" onclick="changePage('events');">Events</span>
-				<span class="col-lg-1 onglet onglet_hoverable" id="galerie_onglet" onclick="changePage('galerie')">Galerie</span>
-				<span class="col-lg-1 onglet onglet_hoverable" onclick="changePage('annales')">Annales</span>
-				<span class="col-lg-1 onglet onglet_hoverable" id="journal_onglet" onclick="changePage('journal');">Journal</span>
+				<span class="col-lg-1 onglet onglet_hoverable" id="index_onglet" onclick="alertValidation('none');changePage('index');">Accueil</span>
+				<span class="col-lg-1 onglet onglet_hoverable" id="bips_onglet" onclick="alertValidation('none');changePage('bips');">BIPS</span>
+				<span class="col-lg-1 onglet onglet_hoverable" id="clubs_onglet" onclick="alertValidation('none');changePage('clubs');">Clubs</span>
+				<span class="col-lg-1 onglet onglet_hoverable" id="boutique_onglet" onclick="alertValidation('none');changePage('boutique');">Boutique</span>
+				<span class="col-lg-1 onglet onglet_hoverable" id="events_onglet" onclick="alertValidation('none');changePage('events');">Events</span>
+				<span class="col-lg-1 onglet onglet_hoverable" id="galerie_onglet" onclick="alertValidation('none');changePage('galerie')">Galerie</span>
+				<span class="col-lg-1 onglet onglet_hoverable" onclick="alertValidation('none');changePage('annales')">Annales</span>
+				<span class="col-lg-1 onglet onglet_hoverable" id="alertValidation('none');journal_onglet" onclick="changePage('journal');">Journal</span>
 			</nav>
 			</div>
 			<div class="row">
@@ -167,6 +173,9 @@
 			var anc_onglet = getQuerystring('page');			
 			var anc_onglet_club = 'presentation';
 			changePage(anc_onglet);
+			var club = "none";
+			var divBefore = "";
+			var anc_page_club = "";
 			//-->
 		</script>
 </html>

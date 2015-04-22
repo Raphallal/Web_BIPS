@@ -10,7 +10,7 @@
 		<br>
 		<form method="post" action="uploadImage.php" enctype="multipart/form-data"> 
 			<label>Image 1 :</label>
-			<select id="selectImg1Cine" onchange="changeImg('img1Cine','images/clubs/cine/',document.getElementById('selectImg1Cine').value)"><option value="3-ADMH01_Photo_1_8.jpg">3-ADMH01_Photo_1_8.jpg</option>
+			<select id="selectImg1Cine" onchange="changeImg('img1Cine','images/clubs/cine/',document.getElementById('selectImg1Cine').value)"><option value="imageExemple.jpg">imageExemple.jpg</option>
 <option value="logoCineFips.jpg">logoCineFips.jpg</option>
 </select>
 			<label>Nouvelle image :</label>
@@ -21,7 +21,7 @@
     	<br>
     	<form method="post" action="uploadImage.php" enctype="multipart/form-data"> 
 			<label>Image 2 :</label>
-			<select id="selectImg2Cine" onchange="changeImg('img2Cine','images/clubs/cine/',document.getElementById('selectImg2Cine').value)"><option value="3-ADMH01_Photo_1_8.jpg">3-ADMH01_Photo_1_8.jpg</option>
+			<select id="selectImg2Cine" onchange="changeImg('img2Cine','images/clubs/cine/',document.getElementById('selectImg2Cine').value)"><option value="imageExemple.jpg">imageExemple.jpg</option>
 <option value="logoCineFips.jpg">logoCineFips.jpg</option>
 </select>
 			<label>Nouvelle image :</label>
@@ -32,7 +32,7 @@
 	    <br>
 	    <form method="post" action="uploadImage.php" enctype="multipart/form-data"> 
 			<label>Image 3 :</label>
-			<select id="selectImg3Cine" onchange="changeImg('img3Cine','images/clubs/cine/',document.getElementById('selectImg3Cine').value)"><option value="3-ADMH01_Photo_1_8.jpg">3-ADMH01_Photo_1_8.jpg</option>
+			<select id="selectImg3Cine" onchange="changeImg('img3Cine','images/clubs/cine/',document.getElementById('selectImg3Cine').value)"><option value="imageExemple.jpg">imageExemple.jpg</option>
 <option value="logoCineFips.jpg">logoCineFips.jpg</option>
 </select>
 			<label>Nouvelle image :</label>

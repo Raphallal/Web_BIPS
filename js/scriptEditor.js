@@ -1,10 +1,13 @@
     function droitModif(){
         //fonction qui test quelle page peuvent être modifiée par l'user
         document.getElementById('modifCine').className = 'visible col-lg-12';
+        document.getElementById('modifBds').className = 'visible col-lg-12';
     }
 
-    function modifier(club, inputValue, namePage){
+    function modifier(inputValue, namePage){
         if(inputValue == "Modifier"){
+            divBefore = document.getElementById(namePage).innerHTML;
+            anc_page_club = namePage;
             document.getElementById('modif'+club).className = 'visible col-lg-12';
             document.getElementById('gestionImg'+club).className = 'visible';
             //document.getElementById('img1'+club).className = 'non-visible';
@@ -12,11 +15,11 @@
             //document.getElementById('textImg1'+club).value = getName('img1'+club);
             //document.getElementById('textImg2'+club).value = getName('img2'+club);
             //document.getElementById('textImg3'+club).value = getName('img3'+club);
-            document.getElementById('selectImg1'+club).innerHTML = getSelectOptionFromDirectory('images/clubs/cine');
+            document.getElementById('selectImg1'+club).innerHTML = getSelectOptionFromDirectory('images/clubs/'+club);
             document.getElementById('selectImg1'+club).value = getName('img1'+club);
-            document.getElementById('selectImg2'+club).innerHTML = getSelectOptionFromDirectory('images/clubs/cine');
+            document.getElementById('selectImg2'+club).innerHTML = getSelectOptionFromDirectory('images/clubs/'+club);
             document.getElementById('selectImg2'+club).value = getName('img2'+club);
-            document.getElementById('selectImg3'+club).innerHTML = getSelectOptionFromDirectory('images/clubs/cine');
+            document.getElementById('selectImg3'+club).innerHTML = getSelectOptionFromDirectory('images/clubs/'+club);
             document.getElementById('selectImg3'+club).value = getName('img3'+club);
             CKEDITOR.replace('descriptionClub'+club);
             document.getElementById('modif'+club).value = "Valider";
@@ -123,4 +126,30 @@
     function changeImg(inputID,imagePath,imageName){
         document.getElementById(inputID).src = imagePath+imageName;
         document.getElementById(inputID).name = imageName;
+    }
+
+    function alertValidation(newClub){
+        if(club != "none"){
+            if(document.getElementById('modif'+club).className == 'visible col-lg-12' && document.getElementById('modif'+club).value == "Valider"){
+                if(confirm('Attention, les modifications n\'ont pas été valider \nVoulez-vous continuer (les changements seront perdus)')){
+                    var id = "descriptionClub";
+                    id += club;
+                    document.getElementById('descriptionClub'+club).className = 'visible';
+                    CKEDITOR.instances[id].destroy();
+                    document.getElementById('modif'+club).value = "Modifier";
+                    document.getElementById('gestionImg'+club).className = 'non-visible';
+                    document.getElementById(anc_page_club).innerHTML = divBefore;
+                    alertNoChange = 0;
+                }
+                else{
+                    alertNoChange = 1;
+                }
+            }
+            else{
+                alertNoChange = 0;
+            }
+        }
+        if(alertNoChange == 0 && newClub != "none"){
+            club = newClub;
+        }
     }
