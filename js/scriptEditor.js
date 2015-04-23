@@ -153,3 +153,8 @@
             club = newClub;
         }
     }
+
+    function resize(object,height,width){
+        object.width = width;
+        object.height = height;
+    }
