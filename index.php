@@ -24,8 +24,17 @@
 		<script type="text/javascript" src="./ckeditor/ckeditor.js"></script>
 		<script type="text/javascript" src="./js/scriptEditor.js"></script>
 		<script type="text/javascript">
-			//variable d'alerte si un veut quitter une page avec des modifications en cours
-			var alertNoChange = 0;
+			
+			function getUsernameFromSession(){
+        		var username = <?php echo json_encode($_SESSION['username']);?>;
+        		return username;
+    		}
+
+    		function getAdminFromSession(){
+        		var admin =  parseInt("<?php echo $_SESSION['admin']; ?>");
+        		return admin;
+    		}
+
 			function changePage(page){
 				if(alertNoChange == 0){
 					resetClub();
@@ -43,6 +52,10 @@
 					}
 				}
 			}
+
+			//variable d'alerte si un veut quitter une page avec des modifications en cours
+			var alertNoChange = 0;
+
 			function changeClub(club){
 				if(alertNoChange == 0){
 					if(anc_onglet_club != 'presentation'){
@@ -78,7 +91,7 @@
 							document.getElementById(club).className = 'col-lg-2 onglet_choisi onglet_club';
 						}
 						else{
-							document.getElementById(anc_onglet_club).className = 'col-lg-2 onglet_choisi onglet_club';
+							document.getElementById(/*anc_onglet_*/club).className = 'col-lg-2 onglet_choisi onglet_club';
 						}
 					}
 					document.getElementById(anc_onglet_club+'_contenu').className = 'non-visible';

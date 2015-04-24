@@ -1,7 +1,49 @@
     function droitModif(){
-        //fonction qui test quelle page peuvent être modifiée par l'user
-        document.getElementById('modifCine').className = 'visible col-lg-12';
-        document.getElementById('modifBds').className = 'visible col-lg-12';
+        var username = getUsernameFromSession();
+        var admin = getAdminFromSession();
+        if(username == 'bips' && admin == 1){
+            document.getElementById('modifCine').className = 'visible col-lg-12';
+            document.getElementById('modifBds').className = 'visible col-lg-12';
+            document.getElementById('modifCapps').className = 'visible col-lg-12';
+            document.getElementById('modifClubActu').className = 'visible col-lg-12';
+            document.getElementById('modifCohesion').className = 'visible col-lg-12';
+            document.getElementById('modifJournal').className = 'visible col-lg-12';
+            document.getElementById('modifKfet').className = 'visible col-lg-12';
+            document.getElementById('modifPompom').className = 'visible col-lg-12';
+            document.getElementById('modifPopsgames').className = 'visible col-lg-12';
+            document.getElementById('modifSpips').className = 'visible col-lg-12';
+            document.getElementById('modifZikifips').className = 'visible col-lg-12';
+        }
+        else if(username == 'cinefips' && admin == 1){
+            document.getElementById('modifCine').className = 'visible col-lg-12';
+        }
+        else if(username == 'capps' && admin == 1){
+            document.getElementById('modifCapps').className = 'visible col-lg-12';
+        }
+        else if(username == 'clubactu' && admin == 1){
+            document.getElementById('modifClubActu').className = 'visible col-lg-12';
+        }
+        else if(username == 'cohesion' && admin == 1){
+            document.getElementById('modifCohesion').className = 'visible col-lg-12';
+        }
+        else if(username == 'journal' && admin == 1){
+           document.getElementById('modifJournal').className = 'visible col-lg-12';
+        }
+        else if(username == 'kfet' && admin == 1){
+             document.getElementById('modifKfet').className = 'visible col-lg-12';
+        }
+        else if(username == 'pompom' && admin == 1){
+            document.getElementById('modifPompom').className = 'visible col-lg-12';
+        }
+        else if(username == 'popsgames' && admin == 1){
+            document.getElementById('modifPopsgames').className = 'visible col-lg-12';
+        }
+        else if(username == 'spips' && admin == 1){
+            document.getElementById('modifSpips').className = 'visible col-lg-12';
+        }
+        else if(username == 'zikifips' && admin == 1){
+            document.getElementById('modifZikifips').className = 'visible col-lg-12';
+        }
     }
 
     function modifier(inputValue, namePage){
@@ -23,6 +65,7 @@
             document.getElementById('selectImg3'+club).value = getName('img3'+club);
             CKEDITOR.replace('descriptionClub'+club);
             document.getElementById('modif'+club).value = "Valider";
+
         }
         else if(inputValue == "Valider"){
             var id = "descriptionClub";
@@ -85,7 +128,7 @@
         xhr.send('namePage='+namePage+'&innerPage='+innerPage);
     }
 
-    function uploadImage(fileToUpload){
+    /*function uploadImage(fileToUpload){
         // creation d'un oblet xmlhttprequest
         var xhr = objet_XMLHttpRequest();
         // Lorsqu'un réponse est émise par le serveur   
@@ -98,7 +141,7 @@
         xhr.open('POST', 'uploadImage.php',true); // request asynchrone 
         xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
         xhr.send('fileToUpload='+fileToUpload);
-    }
+    }*/
 
     function getName(id){
         return document.getElementById(id).getAttribute('name');
@@ -152,9 +195,4 @@
         if(alertNoChange == 0 && newClub != "none"){
             club = newClub;
         }
-    }
-
-    function resize(object,height,width){
-        object.width = width;
-        object.height = height;
     }

@@ -8,20 +8,20 @@
 	</center>
 	
 	<div id="gestionImgCine" class="non-visible">
-		<select id="selectImg1Cine" class="col-lg-2 col-lg-offset-1" style="display:inline-block" onchange="changeImg('img1Cine','images/clubs/cine/',document.getElementById('selectImg1Cine').value)">
-			<option value="imageExemple.jpg">imageExemple.jpg</option>
-			<option value="logoCineFips.jpg">logoCineFips.jpg</option>
-		</select>
+		<select id="selectImg1Cine" class="col-lg-2 col-lg-offset-1" style="display:inline-block" onchange="changeImg('img1Cine','images/clubs/cine/',document.getElementById('selectImg1Cine').value)"><option value="imageExemple.jpg">imageExemple.jpg</option>
+<option value="imagePetite.png">imagePetite.png</option>
+<option value="logoCineFips.jpg">logoCineFips.jpg</option>
+</select>
 			
-		<select id="selectImg2Cine" class="col-lg-2 col-lg-offset-2" style="display:inline-block" onchange="changeImg('img2Cine','images/clubs/cine/',document.getElementById('selectImg2Cine').value)">
-			<option value="imageExemple.jpg">imageExemple.jpg</option>
-			<option value="logoCineFips.jpg">logoCineFips.jpg</option>
-		</select>
+		<select id="selectImg2Cine" class="col-lg-2 col-lg-offset-2" style="display:inline-block" onchange="changeImg('img2Cine','images/clubs/cine/',document.getElementById('selectImg2Cine').value)"><option value="imageExemple.jpg">imageExemple.jpg</option>
+<option value="imagePetite.png">imagePetite.png</option>
+<option value="logoCineFips.jpg">logoCineFips.jpg</option>
+</select>
 
-		<select id="selectImg3Cine" class="col-lg-2 col-lg-offset-2" style="display:inline-block" onchange="changeImg('img3Cine','images/clubs/cine/',document.getElementById('selectImg3Cine').value)">
-			<option value="imageExemple.jpg">imageExemple.jpg</option>
-			<option value="logoCineFips.jpg">logoCineFips.jpg</option>
-		</select>
+		<select id="selectImg3Cine" class="col-lg-2 col-lg-offset-2" style="display:inline-block" onchange="changeImg('img3Cine','images/clubs/cine/',document.getElementById('selectImg3Cine').value)"><option value="imageExemple.jpg">imageExemple.jpg</option>
+<option value="imagePetite.png">imagePetite.png</option>
+<option value="logoCineFips.jpg">logoCineFips.jpg</option>
+</select>
 
 		<br>
 		

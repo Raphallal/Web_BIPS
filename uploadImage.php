@@ -56,7 +56,6 @@
 ?>
 
 <script type="text/javascript">
-
 	var errorString = <?php echo json_encode($errorString);?>;
 	var noErrorString = <?php echo json_encode($noErrorString);?>;
  	var uploadOk = parseInt('<?php echo $uploadOk; ?>');
