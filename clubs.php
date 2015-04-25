@@ -27,115 +27,70 @@
 			}
 			$req->closeCursor();
 		?>
-	</span>
-	
+	</span>	
 	<span id="bds_contenu" class="non-visible">
-		<div id="modifBds" class="non-visible col-lg-12">
-			<input type="submit" class="col-lg-12" value="Modifier" onclick="modifier(this.value, 'bds.php')" />
+			<input type="button" class="col-lg-12" value="Modifier" id="modifBds" onclick="modifier(this.value, 'bds.php')" />
 			<br>
-			<br>
-		</div>
-		<br>
 		<br>
 		<?php include("clubs/bds.php"); ?>
 	</span>
 	<span id="capps_contenu" class="non-visible">
-		<div id="modifCapps" class="non-visible col-lg-12">
-			<input type="submit" class="col-lg-12" value="Modifier" onclick="modifier(this.value, 'capps.php')" />
+			<input type="button" class="col-lg-12" value="Modifier" id="modifCapps" onclick="modifier(this.value, 'capps.php')" />
 			<br>
-			<br>
-		</div>
-		<br>
 		<br>
 		<?php include("clubs/capps.php"); ?>
 	</span>
 	<span id="cinefips_contenu" class="non-visible">
-		<div id="modifCine" class="non-visible col-lg-12">
-			<input type="submit" class="col-lg-12" value="Modifier" onclick="modifier(this.value, 'cinefips.php')" />
+			<input type="button" class="col-lg-12" value="Modifier" id="modifCine" onclick="modifier(this.value, 'cinefips.php')" />
 			<br>
-			<br>
-		</div>
-		<br>
 		<br>
 		<?php include("clubs/cinefips.php"); ?>
 	</span>
 	<span id="clubactus_contenu" class="non-visible">
-		<div id="modifClubActu" class="non-visible col-lg-12">
-			<input type="submit" class="col-lg-12" value="Modifier" onclick="modifier(this.value, 'clubActu.php')" />
+			<input type="button" class="col-lg-12" value="Modifier" id="modifClubActu" onclick="modifier(this.value, 'clubActu.php')" />
 			<br>
-			<br>
-		</div>
-		<br>
 		<br>
 		<?php include("clubs/clubactu.php"); ?>
 	</span>
 	<span id="cohesion_contenu" class="non-visible">
-		<div id="modifCohesion" class="non-visible col-lg-12">
-			<input type="submit" class="col-lg-12" value="Modifier" onclick="modifier(this.value, 'cohesion.php')" />
+			<input type="button" class="col-lg-12" value="Modifier" id="modifCohesion" onclick="modifier(this.value, 'cohesion.php')" />
 			<br>
-			<br>
-		</div>
-		<br>
 		<br>
 		<?php include("clubs/cohesion.php"); ?>
 	</span>
 	<span id="journal_contenu" class="non-visible">
-		<div id="modifJournal" class="non-visible col-lg-12">
-			<input type="submit" class="col-lg-12" value="Modifier" onclick="modifier(this.value, 'journal.php')" />
+			<input type="button" class="col-lg-12" value="Modifier" id="modifJournal" onclick="modifier(this.value, 'journal.php')" />
 			<br>
-			<br>
-		</div>
-		<br>
 		<br>
 		<?php include("clubs/journal.php"); ?>
 	</span>
 	<span id="kfet_contenu" class="non-visible">
-		<div id="modifKfet" class="non-visible col-lg-12">
-			<input type="submit" class="col-lg-12" value="Modifier" onclick="modifier(this.value, 'kfet.php')" />
+			<input type="button" class="col-lg-12" value="Modifier" id="modifKfet" onclick="modifier(this.value, 'kfet.php')" />
 			<br>
-			<br>
-		</div>
-		<br>
 		<br>
 		<?php include("clubs/kfet.php"); ?>
 	</span>
 	<span id="pompom_contenu" class="non-visible">
-		<div id="modifPompom" class="non-visible col-lg-12">
-			<input type="submit" class="col-lg-12" value="Modifier" onclick="modifier(this.value, 'pompom.php')" />
+			<input type="button" class="col-lg-12" value="Modifier" id="modifPompom" onclick="modifier(this.value, 'pompom.php')" />
 			<br>
-			<br>
-		</div>
-		<br>
 		<br>
 		<?php include("clubs/pompom.php"); ?>
 	</span>
 	<span id="popsgames_contenu" class="non-visible">
-		<div id="modifPopsgames" class="non-visible col-lg-12">
-			<input type="submit" class="col-lg-12" value="Modifier" onclick="modifier(this.value, 'popsgames.php')" />
+			<input type="button" class="col-lg-12" value="Modifier" id="modifPopsgames" onclick="modifier(this.value, 'popsgames.php')" />
 			<br>
-			<br>
-		</div>
-		<br>
 		<br>
 		<?php include("clubs/popsgames.php"); ?>
 	</span>
 	<span id="spips_contenu" class="non-visible">
-		<div id="modifSpips" class="non-visible col-lg-12">
-			<input type="submit" class="col-lg-12" value="Modifier" onclick="modifier(this.value, 'spips.php')" />
+			<input type="button" class="col-lg-12" value="Modifier" id="modifSpips" onclick="modifier(this.value, 'spips.php')" />
 			<br>
-			<br>
-		</div>
-		<br>
 		<br>
 		<?php include("clubs/spips.php"); ?>
 	</span>
 	<span id="zikifips_contenu" class="non-visible">
-		<div id="modifZikifips" class="non-visible col-lg-12">
-			<input type="submit" class="col-lg-12" value="Modifier" onclick="modifier(this.value, 'zikifips.php')" />
+			<input type="button" class="col-lg-12" value="Modifier"id="modifZikifips" onclick="modifier(this.value, 'zikifips.php')" />
 			<br>
-			<br>
-		</div>
-		<br>
 		<br>
 		<?php include("clubs/zikifips.php"); ?>
 	</span>

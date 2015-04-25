@@ -65,7 +65,6 @@
             document.getElementById('selectImg3'+club).value = getName('img3'+club);
             CKEDITOR.replace('descriptionClub'+club);
             document.getElementById('modif'+club).value = "Valider";
-
         }
         else if(inputValue == "Valider"){
             var id = "descriptionClub";

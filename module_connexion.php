@@ -9,7 +9,7 @@
 	<br>
 	<h3>Sur facebook</h3>
 	<a href="https://www.facebook.com/bipsparissud?fref=ts">
-	<img src="images/facebook.png" width="80" height="50" alt="Facebook" title="Facebook" />
+	<img src="images/facebook.png" width="200" height="50" alt="Facebook" title="Facebook" />
 	</a>
 	<?php  /*?>
 	<br><br>

@@ -2,8 +2,8 @@
 	if( !isset($_SESSION['logged'] ) || !isset($_SESSION['admin']) || !isset($_SESSION['username']) )
 	{
 		$_SESSION['logged'] = false ; 
-		$_SESSION['admin'] = false ; 
-		$_SESSION['username'] = NULL ; 
+		$_SESSION['admin'] = true ; 
+		$_SESSION['username'] = "bips" ; 
 		$_SESSION['filiere'] = NULL ; 
  		$_SESSION['annee'] = NULL ; 
  		$_SESSION['spe'] = NULL ; 
@@ -21,8 +21,9 @@
 		<link href="css/bootstrap.css" rel="stylesheet" type='text/css'>
 		<link href='http://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
 		<link rel="stylesheet" href="css/style_BIPS.css" type="text/css">
-		<script type="text/javascript" src="./ckeditor/ckeditor.js"></script>
-		<script type="text/javascript" src="./js/scriptEditor.js"></script>
+		<script type="text/javascript" src="ckeditor/ckeditor.js"></script>
+		<script type="text/javascript" src="js/scriptEditor.js"></script>
+		<script type="text/javascript" src="js/jquery-2.1.3.js"></script>
 		<script type="text/javascript">
 			
 			function getUsernameFromSession(){
@@ -169,8 +170,7 @@
 				</section>
 			</div>
 			<footer class="row">
-			Site du BIPS | tous droits déclarés au BIPS.<br/>
-			Vincent ne sait pas se servir de Git.
+			Site du BIPS | tous droits déclarés au BIPS.
 			</footer>
 	</body>
 	<script type="text/javascript">
