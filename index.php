@@ -2,8 +2,8 @@
 	if( !isset($_SESSION['logged'] ) || !isset($_SESSION['admin']) || !isset($_SESSION['username']) )
 	{
 		$_SESSION['logged'] = false ; 
-		$_SESSION['admin'] = true ; 
-		$_SESSION['username'] = "bips" ; 
+		$_SESSION['admin'] = false ; 
+		$_SESSION['username'] = NULL ; 
 		$_SESSION['filiere'] = NULL ; 
  		$_SESSION['annee'] = NULL ; 
  		$_SESSION['spe'] = NULL ; 
