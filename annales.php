@@ -13,12 +13,15 @@
 	<script src="js/jquery-1.11.2.min.js"></script>
 	<script src="js/bootstrap.min.js"></script>
 	<script type="text/javascript">
+	var anc_page = 'upload';
 	function change_onglet(name)
 		{
 			document.getElementById(anc_page).style.display = 'none';
 			document.getElementById(name).style.display = 'block';
 			anc_page = name;
-		}</script>
+		}
+	var first_upload = true;
+	</script>
 </head>
 <body>
 	<div class="globale container">
@@ -84,7 +87,7 @@
 					<p><a href="passForgot.html" target="_blank">Mot de passe oublié ?</a></p>
 				</nav>
 				<section class="col-lg-9">
-					<div  id="list">
+					<div id="list">
 						<div class="col-lg-12 an_header">
 							<span style="text-align:left;">Gaétan Young - Et4 Info</span>
 							<a style="float:right;" onclick="change_onglet('upload');">Uploader un fichier</a>
@@ -116,12 +119,11 @@
 					<div id="upload">
 						<div class="col-lg-12 an_header" id="upload">
 							<span style="text-align:left;">Gaétan Young - Et4 Info</span>
-							<a style="float:right;" onclick="change_onglet('list');">Retour à la liste</a>
+							<a style="float:right;" onclick="change_onglet('list');first_upload=false;">Retour à la liste</a>
 						</div>
 						<div class="col-lg-12 form-group">
-						<form id="file-form" method="POST" onchange="addForm();">
-							<input type="file" id="file-select" name="attachment[]" multiple/>
-							<button type="submit" id="upload-button">Upload</button>
+						<form id="file-form" method="POST">
+							<input type="file" id="file-select" name="attachment[]" onchange="addForm();" accept="application/pdf" multiple />
 						</form>
 						</div>
 					</div>
@@ -131,105 +133,8 @@
 				Site du BIPS | tous droits déclarés au BIPS. 
 			</footer>
 		</body>
-		<script type="text/javascript">
-			var anc_page = 'upload';
-			change_onglet('list');
-			// Données du formulaire
-			var form = document.getElementById('file-form');
-			var fileSelect = document.getElementById('file-select');
-			var uploadButton = document.getElementById('upload-button');
-
-			function addForm(){
-				var files = fileSelect.files;
-				for(var i = 0;i<files.length;i++){
-					var div = document.createElement("div");
-					div.setAttribute('class', "col-lg-4");
-					div.setAttribute('style', "border:1px solid gray;")
-					div.innerHTML = fileSelect.files[i].name.split(/(\\|\/)/g).pop();
-					div.appendChild(document.createElement("br"));
-
-					var typeDoc1 = document.createElement("input");
-					typeDoc1.setAttribute('type', "radio");
-					typeDoc1.setAttribute('name', "typeDoc["+i+"]");
-					typeDoc1.setAttribute('value', "examen");
-					typeDoc1.setAttribute('id', "examen");
-					var label1 = document.createElement("label");
-					label1.setAttribute('for', "examen");
-					label1.innerHTML = "Examen";
-					div.appendChild(typeDoc1);
-					div.appendChild(label1);
-					div.appendChild(document.createElement("br"));
-
-					var typeDoc2 = document.createElement("input");
-					typeDoc2.setAttribute('type', "radio");
-					typeDoc2.setAttribute('name', "typeDoc["+i+"]");
-					typeDoc2.setAttribute('value', "td");
-					typeDoc2.setAttribute('id', "td");
-					var label2 = document.createElement("label");
-					label2.setAttribute('for', "td");
-					label2.innerHTML = "TD";
-					div.appendChild(typeDoc2);
-					div.appendChild(label2);
-					div.appendChild(document.createElement("br"));
-
-					var typeDoc3 = document.createElement("input");
-					typeDoc3.setAttribute('type', "radio");
-					typeDoc3.setAttribute('name', "typeDoc["+i+"]");
-					typeDoc3.setAttribute('value', "correction");
-					typeDoc3.setAttribute('id', "correction");
-					var label3 = document.createElement("label");
-					label3.setAttribute('for', "correction");
-					label3.innerHTML = "Corrigé";
-					div.appendChild(typeDoc3);
-					div.appendChild(label3);
-					div.appendChild(document.createElement("br"));
-
-					form.appendChild(div);
-				}
-			}
-
-			form.onsubmit = function(event) {
-				event.preventDefault();
-
-				// Update button text.
-				uploadButton.innerHTML = 'Upload en cours...';
-
-				var files = fileSelect.files;
-				var formData = new FormData();
-				for (var i = 0; i < files.length; i++) {
-					var file = files[i];
-
-  					// Check the file type.
-  					if (!file.type.match('application/pdf')) {
-  						continue;
-  					}
-
-  					// Add the file to the request.
-  					formData.append('attachment[]', file, file.name);
-  				}
-  				var xhr = null; 
-  				if(window.XMLHttpRequest) // Firefox et autres
-  					xhr = new XMLHttpRequest(); 
-  				else if(window.ActiveXObject){ // Internet Explorer 
-  					try {
-			      		xhr = new ActiveXObject("Msxml2.XMLHTTP");
-			      	} catch (e) {
-			      		xhr = new ActiveXObject("Microsoft.XMLHTTP");
-			      	}
-  				}
-  				else { // XMLHttpRequest non supporté par le navigateur 
-  					xhr = false; 
-  				}
-  				xhr.open('POST', 'upload.php', true);
-  				xhr.onload = function () {
-  				if (xhr.status === 200) {
-					// File(s) uploaded.
-					uploadButton.innerHTML = 'Upload en cours...';
-				} else {
-					alert('An error occurred!');
-				}
-			};
-			xhr.send(formData);
-		}
+	<script type="text/javascript">
+		change_onglet('list');
 	</script>
+	<script src="js/annales.js"></script>
 </html>
