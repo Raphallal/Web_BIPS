@@ -21,12 +21,9 @@
 		<link href="css/bootstrap.css" rel="stylesheet" type='text/css'>
 		<link href='http://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
 		<link rel="stylesheet" href="css/style_BIPS.css" type="text/css">
-<<<<<<< HEAD
 		<script type="text/javascript" src="js/jquery-2.1.3.js"></script>
-=======
 		<script type="text/javascript" src="./ckeditor/ckeditor.js"></script>
 		<script type="text/javascript" src="./js/scriptEditor.js"></script>
->>>>>>> origin/backOffice
 		<script type="text/javascript">
 			
 			function getUsernameFromSession(){
@@ -149,51 +146,7 @@
 			</nav>
 			</div>
 			<div class="row">
-<<<<<<< HEAD
-				<nav class="col-lg-3 menu">
-					<p>
-					<h2>Nous suivre</h2><br/>
-					<a href="https://twitter.com/AssoBIPS?lang=fr">
-					<img src="images/twitter.JPG" alt="Twitter" title="Twitter" />
-					</a>
-					<?php/* include("follow_button.htm"); */?>
-					<br>
-					<a href="https://www.facebook.com/bipsparissud?fref=ts">
-					<img src="images/facebook.png" width="200" height="50" alt="Facebook" title="Facebook" />
-					</a>
-					<?php  /*?>
-					<br><br>
-					<h3>RSS</h3>
-					<a href="">
-					<img src="images/rss2.png" style="position: relative; right: 90px" width="50" height="50" alt="RSS" title="RSS" />
-					</a>
-					*/ ?>
-					</p>
-					<form action="enregistrement.php" method="post"> 
-						<table>
-							<tr>
-								<td colspan="2"><h2>Connexion</h2></th>
-							</tr>
-						   <tr>
-							   <th>Identifiant </th>
-							   <td><input type="text" name="iden" id="iden"/></td>
-						   </tr>
-						   <tr>
-							   <th>Mot de passe </th>
-							   <td><input type="password" name="passwd" id="passwd"/></td>
-						   </tr>
-						   <tr>
-							   <th></th>
-							   <td><input type="submit" value="Se connecter" /></td>
-						   </tr>
-						</table>
-					</form>
-					<p><a href="createAccount.html" target="_blank">Créer un compte</a></p>
-					<p><a href="passForgot.html" target="_blank">Mot de passe oublié ?</a></p>
-				</nav>
-=======
 			<?php include("module_connexion.php"); ?> 
->>>>>>> origin/backOffice
 				<section class="col-lg-9">
 					<?php include("connexion_bd_bips.php"); ?>
 					<span id="index_contenu" class="non-visible">
