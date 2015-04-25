@@ -140,8 +140,8 @@
 				<span class="col-lg-1 onglet onglet_hoverable" id="boutique_onglet" onclick="alertValidation('none');changePage('boutique');">Boutique</span>
 				<span class="col-lg-1 onglet onglet_hoverable" id="events_onglet" onclick="alertValidation('none');changePage('events');">Events</span>
 				<span class="col-lg-1 onglet onglet_hoverable" id="galerie_onglet" onclick="alertValidation('none');changePage('galerie')">Galerie</span>
-				<span class="col-lg-1 onglet onglet_hoverable" onclick="alertValidation('none');changePage('annales')">Annales</span>
-				<span class="col-lg-1 onglet onglet_hoverable" id="alertValidation('none');journal_onglet" onclick="changePage('journal');">Journal</span>
+				<span class="col-lg-1 onglet onglet_hoverable" id="annales_onglet" onclick="alertValidation('none');changePage('annales')">Annales</span>
+				<span class="col-lg-1 onglet onglet_hoverable" id="journal_onglet" onclick="alertValidation('none');changePage('journal');">Journal</span>
 			</nav>
 			</div>
 			<div class="row">
