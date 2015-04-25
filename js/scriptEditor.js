@@ -50,7 +50,7 @@
         if(inputValue == "Modifier"){
             divBefore = document.getElementById(namePage).innerHTML;
             anc_page_club = namePage;
-            document.getElementById('modif'+club).className = 'visible col-lg-12';
+            document.getElementById('modif'+club).className = 'visible col-lg-8';
             document.getElementById('gestionImg'+club).className = 'visible';
             //document.getElementById('img1'+club).className = 'non-visible';
             document.getElementById('descriptionClub'+club).className = 'non-visible';
