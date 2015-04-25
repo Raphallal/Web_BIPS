@@ -4,7 +4,8 @@
 	<span class="col-lg-2 onglet_hoverable onglet_club" id="cinefips" onclick="alertValidation('Cine');changeClub('cinefips');">CinéFips</span>
 	<span class="col-lg-3 onglet_hoverable onglet_club" id="clubactus" onclick="alertValidation('ClubActu');changeClub('clubactus');">Club Actu</span>
 	<span class="col-lg-3 onglet_hoverable onglet_club_droite" id="cohesion" onclick="alertValidation('Cohesion');changeClub('cohesion');">Cohésion</span>
-	
+</nav>
+<nav class="onglets_club row">
 	<span class="col-lg-2 onglet_hoverable onglet_club" id="journal" onclick="alertValidation('Journal');changeClub('journal');">Journal</span>
 	<span class="col-lg-2 onglet_hoverable onglet_club" id="kfet" onclick="alertValidation('Kfet');changeClub('kfet');">KFet</span>
 	<span class="col-lg-2 onglet_hoverable onglet_club" id="pompom" onclick="alertValidation('Pompom');changeClub('pompom');">PomPom</span>
@@ -14,7 +15,7 @@
 </nav>
 
 <section class="sectionClub">
-
+	<br>
 	<span id="presentation_contenu" class="visible">
 		<?php
 			$req = $bdd->query('SELECT titre, contenu FROM article WHERE idpage = 3');
@@ -78,7 +79,6 @@
 		<br>
 		<?php include("clubs/cohesion.php"); ?>
 	</span>
-	
 	<span id="journal_contenu" class="non-visible">
 		<div id="modifJournal" class="non-visible col-lg-12">
 			<input type="submit" class="col-lg-12" value="Modifier" onclick="modifier(this.value, 'journal.php')" />
@@ -86,9 +86,9 @@
 			<br>
 		</div>
 		<br>
+		<br>
 		<?php include("clubs/journal.php"); ?>
 	</span>
-	
 	<span id="kfet_contenu" class="non-visible">
 		<div id="modifKfet" class="non-visible col-lg-12">
 			<input type="submit" class="col-lg-12" value="Modifier" onclick="modifier(this.value, 'kfet.php')" />
@@ -140,3 +140,4 @@
 		<?php include("clubs/zikifips.php"); ?>
 	</span>
 </section>
+
