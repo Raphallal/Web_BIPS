@@ -30,8 +30,8 @@
 	</span>
 	
 	<span id="bds_contenu" class="non-visible">
-		<div  class="non-visible col-lg-12">
-			<input type="submit" id="modifBds" class="col-lg-12" value="Modifier" onclick="modifier(this.value, 'bds.php')" />
+		<div id="modifBds" class="non-visible col-lg-12">
+			<input type="submit" class="col-lg-12" value="Modifier" onclick="modifier(this.value, 'bds.php')" />
 			<br>
 			<br>
 		</div>
