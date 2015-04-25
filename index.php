@@ -178,7 +178,8 @@
 				</section>
 			</div>
 			<footer class="row">
-			Site du BIPS | tous droits déclarés au BIPS. 
+			Site du BIPS | tous droits déclarés au BIPS.<br/>
+			Vincent ne sait pas se servir de Git.
 			</footer>
 	</body>
 	<script type="text/javascript">
