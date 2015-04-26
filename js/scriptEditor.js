@@ -2,47 +2,47 @@
         var username = getUsernameFromSession();
         var admin = getAdminFromSession();
         if(username == 'bips' && admin == 1){
-            document.getElementById('modifCine').className = 'visible col-lg-12';
-            document.getElementById('modifBds').className = 'visible col-lg-12';
-            document.getElementById('modifCapps').className = 'visible col-lg-12';
-            document.getElementById('modifClubActu').className = 'visible col-lg-12';
-            document.getElementById('modifCohesion').className = 'visible col-lg-12';
-            document.getElementById('modifJournal').className = 'visible col-lg-12';
-            document.getElementById('modifKfet').className = 'visible col-lg-12';
-            document.getElementById('modifPompom').className = 'visible col-lg-12';
-            document.getElementById('modifPopsgames').className = 'visible col-lg-12';
-            document.getElementById('modifSpips').className = 'visible col-lg-12';
-            document.getElementById('modifZikifips').className = 'visible col-lg-12';
+            document.getElementById('modifCine').className = 'visible';
+            document.getElementById('modifBds').className = 'visible';
+            document.getElementById('modifCapps').className = 'visible';
+            document.getElementById('modifClubActu').className = 'visible';
+            document.getElementById('modifCohesion').className = 'visible';
+            document.getElementById('modifJournal').className = 'visible';
+            document.getElementById('modifKfet').className = 'visible';
+            document.getElementById('modifPompom').className = 'visible';
+            document.getElementById('modifPopsgames').className = 'visible';
+            document.getElementById('modifSpips').className = 'visible';
+            document.getElementById('modifZikifips').className = 'visible';
         }
         else if(username == 'cinefips' && admin == 1){
-            document.getElementById('modifCine').className = 'visible col-lg-12';
+            document.getElementById('modifCine').className = 'visible';
         }
         else if(username == 'capps' && admin == 1){
-            document.getElementById('modifCapps').className = 'visible col-lg-12';
+            document.getElementById('modifCapps').className = 'visible';
         }
         else if(username == 'clubactu' && admin == 1){
-            document.getElementById('modifClubActu').className = 'visible col-lg-12';
+            document.getElementById('modifClubActu').className = 'visible';
         }
         else if(username == 'cohesion' && admin == 1){
-            document.getElementById('modifCohesion').className = 'visible col-lg-12';
+            document.getElementById('modifCohesion').className = 'visible';
         }
         else if(username == 'journal' && admin == 1){
-           document.getElementById('modifJournal').className = 'visible col-lg-12';
+           document.getElementById('modifJournal').className = 'visible';
         }
         else if(username == 'kfet' && admin == 1){
-             document.getElementById('modifKfet').className = 'visible col-lg-12';
+             document.getElementById('modifKfet').className = 'visible';
         }
         else if(username == 'pompom' && admin == 1){
-            document.getElementById('modifPompom').className = 'visible col-lg-12';
+            document.getElementById('modifPompom').className = 'visible';
         }
         else if(username == 'popsgames' && admin == 1){
-            document.getElementById('modifPopsgames').className = 'visible col-lg-12';
+            document.getElementById('modifPopsgames').className = 'visible';
         }
         else if(username == 'spips' && admin == 1){
-            document.getElementById('modifSpips').className = 'visible col-lg-12';
+            document.getElementById('modifSpips').className = 'visible';
         }
         else if(username == 'zikifips' && admin == 1){
-            document.getElementById('modifZikifips').className = 'visible col-lg-12';
+            document.getElementById('modifZikifips').className = 'visible';
         }
     }
 
@@ -50,13 +50,9 @@
         if(inputValue == "Modifier"){
             divBefore = document.getElementById(namePage).innerHTML;
             anc_page_club = namePage;
-            document.getElementById('modif'+club).className = 'visible col-lg-12';
+            document.getElementById('modif'+club).className = 'visible';
             document.getElementById('gestionImg'+club).className = 'visible';
-            //document.getElementById('img1'+club).className = 'non-visible';
             document.getElementById('descriptionClub'+club).className = 'non-visible';
-            //document.getElementById('textImg1'+club).value = getName('img1'+club);
-            //document.getElementById('textImg2'+club).value = getName('img2'+club);
-            //document.getElementById('textImg3'+club).value = getName('img3'+club);
             document.getElementById('selectImg1'+club).innerHTML = getSelectOptionFromDirectory('images/clubs/'+club);
             document.getElementById('selectImg1'+club).value = getName('img1'+club);
             document.getElementById('selectImg2'+club).innerHTML = getSelectOptionFromDirectory('images/clubs/'+club);
@@ -127,21 +123,6 @@
         xhr.send('namePage='+namePage+'&innerPage='+innerPage);
     }
 
-    /*function uploadImage(fileToUpload){
-        // creation d'un oblet xmlhttprequest
-        var xhr = objet_XMLHttpRequest();
-        // Lorsqu'un réponse est émise par le serveur   
-        xhr.onreadystatechange = function() {
-            if (xhr.readyState == 4 && (xhr.status == 200 || xhr.status == 0)) {
-                alert(xhr.responseText);
-            }
-        };
-        //envoie de la requete en methode post
-        xhr.open('POST', 'uploadImage.php',true); // request asynchrone 
-        xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-        xhr.send('fileToUpload='+fileToUpload);
-    }*/
-
     function getName(id){
         return document.getElementById(id).getAttribute('name');
     }
@@ -172,7 +153,7 @@
 
     function alertValidation(newClub){
         if(club != "none"){
-            if(document.getElementById('modif'+club).className == 'visible col-lg-12' && document.getElementById('modif'+club).value == "Valider"){
+            if(document.getElementById('modif'+club).className == 'visible' && document.getElementById('modif'+club).value == "Valider"){
                 if(confirm('Attention, les modifications n\'ont pas été valider \nVoulez-vous continuer (les changements seront perdus)')){
                     var id = "descriptionClub";
                     id += club;
