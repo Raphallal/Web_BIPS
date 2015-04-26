@@ -53,11 +53,11 @@
             document.getElementById('modif'+club).className = 'visible';
             document.getElementById('gestionImg'+club).className = 'visible';
             document.getElementById('descriptionClub'+club).className = 'non-visible';
-            document.getElementById('selectImg1'+club).innerHTML = getSelectOptionFromDirectory('images/clubs/'+club);
+            document.getElementById('selectImg1'+club).innerHTML = "<option value='Aucune'>Aucune</option>" + getSelectOptionFromDirectory('images/clubs/'+club);
             document.getElementById('selectImg1'+club).value = getName('img1'+club);
-            document.getElementById('selectImg2'+club).innerHTML = getSelectOptionFromDirectory('images/clubs/'+club);
+            document.getElementById('selectImg2'+club).innerHTML = "<option value='Aucune'>Aucune</option>" + getSelectOptionFromDirectory('images/clubs/'+club);
             document.getElementById('selectImg2'+club).value = getName('img2'+club);
-            document.getElementById('selectImg3'+club).innerHTML = getSelectOptionFromDirectory('images/clubs/'+club);
+            document.getElementById('selectImg3'+club).innerHTML = "<option value='Aucune'>Aucune</option>" + getSelectOptionFromDirectory('images/clubs/'+club);
             document.getElementById('selectImg3'+club).value = getName('img3'+club);
             CKEDITOR.replace('descriptionClub'+club);
             document.getElementById('modif'+club).value = "Valider";
@@ -147,8 +147,14 @@
     }
 
     function changeImg(inputID,imagePath,imageName){
-        document.getElementById(inputID).src = imagePath+imageName;
-        document.getElementById(inputID).name = imageName;
+        if(imageName != "Aucune"){
+            document.getElementById(inputID).src = imagePath+imageName;
+            document.getElementById(inputID).name = imageName;
+        }
+        else{
+            document.getElementById(inputID).src = "images/aucune.png";
+            document.getElementById(inputID).name = "Aucune";
+        }
     }
 
     function alertValidation(newClub){
@@ -174,5 +180,14 @@
         }
         if(alertNoChange == 0 && newClub != "none"){
             club = newClub;
+        }
+    }
+
+    function displayHideImg(inputID){
+        if(document.getElementById(inputID).name == "Aucune"){
+            document.getElementById(inputID).className = "img_club non-visible";
+        }
+        else{
+            document.getElementById(inputID).className = "img_club";
         }
     }

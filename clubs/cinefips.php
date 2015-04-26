@@ -2,9 +2,9 @@
 	<div id="descriptionClubCine" class="visible"><p>Cinéfips est le club audiovisuel de Polytech Paris Sud. Il crée des courts métrages et les diffuse lors de diverses projections, tels que les JT, à l'ensemble des étudiants. Il couvre également les différents évènements organisés par l'école : cérémonie de remise de diplômes, gala...</p><p>Le club organise des ateliers pour apprendre toutes les facettes de la réalisation d'un court métrage : scénario, tournage, montage, effets spéciaux, jeux de lumière ... Ils s'adressent à tous les cinéastes de l'école, quelque soit leur niveau, seule la motivation importe !</p><p>Chaque année, Cinéfips se charge de la production du lipdub afin de présenter l'école aux nouveaux arrivants : bonne ambiance et convivialité assurées. Nous comptons sur vous pour rendre ce lipdub encore plus spectaculaire que celui de l'année passée !</p></div>
 	<br>
 	<center>
-	<img src="images/clubs/cine/logoCineFips.jpg" name="logoCineFips.jpg" class="img_club" alt="image" id="img1Cine">
-	<img src="images/clubs/cine/logoCineFips.jpg" name="logoCineFips.jpg" class="img_club" alt="image" id="img2Cine">
-	<img src="images/clubs/cine/logoCineFips.jpg" name="logoCineFips.jpg" class="img_club" alt="image" id="img3Cine">
+	<img src="images/clubs/cine/logoCineFips.jpg" name="logoCineFips.jpg" class="img_club" alt="image" id="img1Cine" onload="displayHideImg(this.id)">
+	<img src="images/clubs/cine/logoCineFips.jpg" name="logoCineFips.jpg" class="img_club" alt="image" id="img2Cine" onload="displayHideImg(this.id)">
+	<img src="images/clubs/cine/logoCineFips.jpg" name="logoCineFips.jpg" class="img_club" alt="image" id="img3Cine" onload="displayHideImg(this.id)">
 	</center>
 	
 	<div id="gestionImgCine" class="non-visible">
