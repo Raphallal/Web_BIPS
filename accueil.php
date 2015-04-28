@@ -1,3 +1,18 @@
+<marquee align="center" height="20" scrolldelay="10" scrollamount="5" onmouseout="this.start()" onmouseover="this.stop()"><p>
+<?php
+$req = $bdd->query('SELECT titre, date FROM article WHERE idpage = 5 AND date > CURRENT_DATE LIMIT 5');
+while ($donnees = $req->fetch()){
+	echo '<span class="ongletEvent">';
+	echo $donnees['titre'];
+	echo ' organisé par ...... le ';
+	$timestamp = strtotime($donnees['date']);
+	echo date("d / m / Y", $timestamp);
+	echo '</span>';
+}
+$req->closeCursor();
+?>
+</p></marquee>
+
 <?php
 $req = $bdd->query('SELECT idarticle, titre, date, contenu FROM article WHERE idpage = 1 ORDER BY date DESC');
 while ($donnees = $req->fetch()){
