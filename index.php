@@ -23,6 +23,7 @@
 		<link rel="stylesheet" href="css/style_BIPS.css" type="text/css">
 		<script type="text/javascript" src="ckeditor/ckeditor.js"></script>
 		<script type="text/javascript" src="js/scriptEditor.js"></script>
+		<script type="text/javascript" src="js/scriptAccueil.js"></script>
 		<script type="text/javascript" src="js/jquery-2.1.3.js"></script>
 		<script type="text/javascript">
 			
@@ -36,8 +37,82 @@
         		return admin;
     		}
 
+    		function droitModif(){
+		        var username = getUsernameFromSession();
+		        var admin = getAdminFromSession();
+		        if(username == 'bips' && admin == 1){
+		        	// pages clubs
+		            document.getElementById('modifCine').className = 'visible';
+		            document.getElementById('modifBds').className = 'visible';
+		            document.getElementById('modifCapps').className = 'visible';
+		            document.getElementById('modifClubActu').className = 'visible';
+		            document.getElementById('modifCohesion').className = 'visible';
+		            document.getElementById('modifJournal').className = 'visible';
+		            document.getElementById('modifKfet').className = 'visible';
+		            document.getElementById('modifPompom').className = 'visible';
+		            document.getElementById('modifPopsgames').className = 'visible';
+		            document.getElementById('modifSpips').className = 'visible';
+		            document.getElementById('modifZikifips').className = 'visible';
+
+		            //page accueil
+		            var elems = document.getElementsByClassName('inputArticleAcc');
+					for(var i = 0; i < elems.length; i++) {
+					    elems[i].className = 'visible inputArticleAcc';
+					}
+		        }
+		        else if(username == 'cinefips' && admin == 1){
+		            document.getElementById('modifCine').className = 'visible';
+		        }
+		        else if(username == 'capps' && admin == 1){
+		            document.getElementById('modifCapps').className = 'visible';
+		        }
+		        else if(username == 'clubactu' && admin == 1){
+		            document.getElementById('modifClubActu').className = 'visible';
+		        }
+		        else if(username == 'cohesion' && admin == 1){
+		            document.getElementById('modifCohesion').className = 'visible';
+		        }
+		        else if(username == 'journal' && admin == 1){
+		           document.getElementById('modifJournal').className = 'visible';
+		        }
+		        else if(username == 'kfet' && admin == 1){
+		             document.getElementById('modifKfet').className = 'visible';
+		        }
+		        else if(username == 'pompom' && admin == 1){
+		            document.getElementById('modifPompom').className = 'visible';
+		        }
+		        else if(username == 'popsgames' && admin == 1){
+		            document.getElementById('modifPopsgames').className = 'visible';
+		        }
+		        else if(username == 'spips' && admin == 1){
+		            document.getElementById('modifSpips').className = 'visible';
+		        }
+		        else if(username == 'zikifips' && admin == 1){
+		            document.getElementById('modifZikifips').className = 'visible';
+		        }
+		    }
+
+		    var alertNoChange = 0;
+
 			function changePage(page){
 				if(alertNoChange == 0){
+					resetClub();
+					if(page == 'galerie')
+						location.href="galerie.php";
+					if(page == 'annales')
+						location.href="";
+					else{
+						document.getElementById(anc_onglet+'_onglet').className = 'col-lg-1 onglet onglet_hoverable';
+						document.getElementById(page+'_onglet').className = 'col-lg-1 onglet onglet_choisi';
+						document.getElementById(anc_onglet+'_contenu').className = 'non-visible';
+						document.getElementById(page+'_contenu').className = 'visible';
+						anc_onglet = page;
+						window.history.pushState(document.title,document.title,"?page="+page);
+					}
+				}
+				else if(confirm('Attention, les modifications n\'ont pas été valider \nVoulez-vous continuer (les changements seront perdus)')){
+					alertNoChange = 0;
+					location.reload();
 					resetClub();
 					if(page == 'galerie')
 						location.href="galerie.php";
@@ -135,14 +210,14 @@
 			</header>
 			<div class="row">
 			<nav class="col-lg-12 onglets">
-				<span class="col-lg-1 onglet onglet_hoverable" id="index_onglet" onclick="alertValidation('none');changePage('index');">Accueil</span>
-				<span class="col-lg-1 onglet onglet_hoverable" id="bips_onglet" onclick="alertValidation('none');changePage('bips');">BIPS</span>
-				<span class="col-lg-1 onglet onglet_hoverable" id="clubs_onglet" onclick="alertValidation('none');changePage('clubs');">Clubs</span>
-				<span class="col-lg-1 onglet onglet_hoverable" id="boutique_onglet" onclick="alertValidation('none');changePage('boutique');">Boutique</span>
-				<span class="col-lg-1 onglet onglet_hoverable" id="events_onglet" onclick="alertValidation('none');changePage('events');">Events</span>
-				<span class="col-lg-1 onglet onglet_hoverable" id="galerie_onglet" onclick="alertValidation('none');changePage('galerie')">Galerie</span>
-				<span class="col-lg-1 onglet onglet_hoverable" id="annales_onglet" onclick="alertValidation('none');changePage('annales')">Annales</span>
-				<span class="col-lg-1 onglet onglet_hoverable" id="journal_onglet" onclick="alertValidation('none');changePage('journal');">Journal</span>
+				<span class="col-lg-1 onglet onglet_hoverable" id="index_onglet" onclick="alertValidationClubs('none');changePage('index');">Accueil</span>
+				<span class="col-lg-1 onglet onglet_hoverable" id="bips_onglet" onclick="alertValidationClubs('none');changePage('bips');">BIPS</span>
+				<span class="col-lg-1 onglet onglet_hoverable" id="clubs_onglet" onclick="alertValidationClubs('none');changePage('clubs');">Clubs</span>
+				<span class="col-lg-1 onglet onglet_hoverable" id="boutique_onglet" onclick="alertValidationClubs('none');changePage('boutique');">Boutique</span>
+				<span class="col-lg-1 onglet onglet_hoverable" id="events_onglet" onclick="alertValidationClubs('none');changePage('events');">Events</span>
+				<span class="col-lg-1 onglet onglet_hoverable" id="galerie_onglet" onclick="alertValidationClubs('none');changePage('galerie')">Galerie</span>
+				<span class="col-lg-1 onglet onglet_hoverable" id="annales_onglet" onclick="alertValidationClubs('none');changePage('annales')">Annales</span>
+				<span class="col-lg-1 onglet onglet_hoverable" id="journal_onglet" onclick="alertValidationClubs('none');changePage('journal');">Journal</span>
 			</nav>
 			</div>
 			<div class="row">

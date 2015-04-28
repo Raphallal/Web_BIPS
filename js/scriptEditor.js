@@ -1,51 +1,3 @@
-    function droitModif(){
-        var username = getUsernameFromSession();
-        var admin = getAdminFromSession();
-        if(username == 'bips' && admin == 1){
-            document.getElementById('modifCine').className = 'visible';
-            document.getElementById('modifBds').className = 'visible';
-            document.getElementById('modifCapps').className = 'visible';
-            document.getElementById('modifClubActu').className = 'visible';
-            document.getElementById('modifCohesion').className = 'visible';
-            document.getElementById('modifJournal').className = 'visible';
-            document.getElementById('modifKfet').className = 'visible';
-            document.getElementById('modifPompom').className = 'visible';
-            document.getElementById('modifPopsgames').className = 'visible';
-            document.getElementById('modifSpips').className = 'visible';
-            document.getElementById('modifZikifips').className = 'visible';
-        }
-        else if(username == 'cinefips' && admin == 1){
-            document.getElementById('modifCine').className = 'visible';
-        }
-        else if(username == 'capps' && admin == 1){
-            document.getElementById('modifCapps').className = 'visible';
-        }
-        else if(username == 'clubactu' && admin == 1){
-            document.getElementById('modifClubActu').className = 'visible';
-        }
-        else if(username == 'cohesion' && admin == 1){
-            document.getElementById('modifCohesion').className = 'visible';
-        }
-        else if(username == 'journal' && admin == 1){
-           document.getElementById('modifJournal').className = 'visible';
-        }
-        else if(username == 'kfet' && admin == 1){
-             document.getElementById('modifKfet').className = 'visible';
-        }
-        else if(username == 'pompom' && admin == 1){
-            document.getElementById('modifPompom').className = 'visible';
-        }
-        else if(username == 'popsgames' && admin == 1){
-            document.getElementById('modifPopsgames').className = 'visible';
-        }
-        else if(username == 'spips' && admin == 1){
-            document.getElementById('modifSpips').className = 'visible';
-        }
-        else if(username == 'zikifips' && admin == 1){
-            document.getElementById('modifZikifips').className = 'visible';
-        }
-    }
-
     function modifier(inputValue, namePage){
         if(inputValue == "Modifier"){
             divBefore = document.getElementById(namePage).innerHTML;
@@ -157,7 +109,7 @@
         }
     }
 
-    function alertValidation(newClub){
+    function alertValidationClubs(newClub){
         if(club != "none"){
             if(document.getElementById('modif'+club).className == 'visible' && document.getElementById('modif'+club).value == "Valider"){
                 if(confirm('Attention, les modifications n\'ont pas été valider \nVoulez-vous continuer (les changements seront perdus)')){

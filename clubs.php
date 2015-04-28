@@ -1,17 +1,17 @@
 <nav class="onglets_club row">
-	<span class="col-lg-2 onglet_hoverable onglet_club" id="bds" onclick="alertValidation('Bds');changeClub('bds');">BDS</span>
-	<span class="col-lg-2 onglet_hoverable onglet_club" id="capps" onclick="alertValidation('Capps');changeClub('capps');">CAPPS</span>
-	<span class="col-lg-2 onglet_hoverable onglet_club" id="cinefips" onclick="alertValidation('Cine');changeClub('cinefips');">CinéFips</span>
-	<span class="col-lg-3 onglet_hoverable onglet_club" id="clubactus" onclick="alertValidation('ClubActu');changeClub('clubactus');">Club Actu</span>
-	<span class="col-lg-3 onglet_hoverable onglet_club_droite" id="cohesion" onclick="alertValidation('Cohesion');changeClub('cohesion');">Cohésion</span>
+	<span class="col-lg-2 onglet_hoverable onglet_club" id="bds" onclick="alertValidationClubs('Bds');changeClub('bds');">BDS</span>
+	<span class="col-lg-2 onglet_hoverable onglet_club" id="capps" onclick="alertValidationClubs('Capps');changeClub('capps');">CAPPS</span>
+	<span class="col-lg-2 onglet_hoverable onglet_club" id="cinefips" onclick="alertValidationClubs('Cine');changeClub('cinefips');">CinéFips</span>
+	<span class="col-lg-3 onglet_hoverable onglet_club" id="clubactus" onclick="alertValidationClubs('ClubActu');changeClub('clubactus');">Club Actu</span>
+	<span class="col-lg-3 onglet_hoverable onglet_club_droite" id="cohesion" onclick="alertValidationClubs('Cohesion');changeClub('cohesion');">Cohésion</span>
 </nav>
 <nav class="onglets_club row">
-	<span class="col-lg-2 onglet_hoverable onglet_club" id="journal" onclick="alertValidation('Journal');changeClub('journal');">Journal</span>
-	<span class="col-lg-2 onglet_hoverable onglet_club" id="kfet" onclick="alertValidation('Kfet');changeClub('kfet');">KFet</span>
-	<span class="col-lg-2 onglet_hoverable onglet_club" id="pompom" onclick="alertValidation('Pompom');changeClub('pompom');">PomPom</span>
-	<span class="col-lg-2 onglet_hoverable onglet_club" id="popsgames" onclick="alertValidation('Popsgames');changeClub('popsgames');">PopsGames</span>
-	<span class="col-lg-2 onglet_hoverable onglet_club" id="spips" onclick="alertValidation('Spips');changeClub('spips');">SPIPS</span>
-	<span class="col-lg-2 onglet_hoverable onglet_club_droite" id="zikifips" onclick="alertValidation('Zikifips');changeClub('zikifips');">Zikifips</span>
+	<span class="col-lg-2 onglet_hoverable onglet_club" id="journal" onclick="alertValidationClubs('Journal');changeClub('journal');">Journal</span>
+	<span class="col-lg-2 onglet_hoverable onglet_club" id="kfet" onclick="alertValidationClubs('Kfet');changeClub('kfet');">KFet</span>
+	<span class="col-lg-2 onglet_hoverable onglet_club" id="pompom" onclick="alertValidationClubs('Pompom');changeClub('pompom');">PomPom</span>
+	<span class="col-lg-2 onglet_hoverable onglet_club" id="popsgames" onclick="alertValidationClubs('Popsgames');changeClub('popsgames');">PopsGames</span>
+	<span class="col-lg-2 onglet_hoverable onglet_club" id="spips" onclick="alertValidationClubs('Spips');changeClub('spips');">SPIPS</span>
+	<span class="col-lg-2 onglet_hoverable onglet_club_droite" id="zikifips" onclick="alertValidationClubs('Zikifips');changeClub('zikifips');">Zikifips</span>
 </nav>
 
 <section class="sectionClub">

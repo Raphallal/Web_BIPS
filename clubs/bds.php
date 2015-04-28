@@ -1,5 +1,5 @@
 <div id="bds.php">
-	<div style="" id="descriptionClubBds" class="visible"><p>Lorem ipsum dolor sit amet, consempeenatis rutrum lorem tristique sed. Quisque malesuada massa vel justo iaculis, nec sodales magna tempor. Nunc a sollicitudin urna. Maecenas sit amet est at elit malesuada feugiat. In risus orci, consectetur et orci at, elementum fringilla elit. Morbi metus velit, elementum sit amet risus vel, gravida sagittis ipsum. Fusce ultricies neque nec convallis elementum. Ut quis leo ultrices, lobortis sapien id, congue sapien. Mauris aliquam finibus eros.</p></div>
+	<div id="descriptionClubBds" class="visible"><p>Lorem ipsum dolor sit amet, consempeenatis rutrum lorem tristique sed. Quisque malesuada massa vel justo iaculis, nec sodales magna tempor. Nunc a sollicitudin urna. Maecenas sit amet est at elit malesuada feugiat. In risus orci, consectetur et orci at, elementum fringilla elit. Morbi metus velit, elementum sit amet risus vel, gravida sagittis ipsum. Fusce ultricies neque nec convallis elementum. Ut quis leo ultrices, lobortis sapien id, congue sapien. Mauris aliquam finibus eros.</p></div>
 	<br>
 	<center>
 	<img src="images/clubs/bds/imageExemple.jpg" name="imageExemple.jpg" class="img_club" alt="image" id="img1Bds" onload="displayHideImg(this.id)">

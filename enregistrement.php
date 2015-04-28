@@ -26,7 +26,7 @@
 			{
 				$id = mysql_real_escape_string($_POST['iden']) ; 
 				$pwd = mysql_real_escape_string($_POST['passwd']) ; 
-				$bdd = new PDO('mysql:host='.'localhost'.';dbname='.'bips', 'root', 'root') ;
+				$bdd = new PDO('mysql:host='.'localhost'.';dbname='.'bips', 'root', '') ;
 				$pwd = md5($pwd) ; 
 				//$query= "SELECT * FROM logins WHERE nickname='$nick' AND password =PASSWORD('$pwd')" ; 
 				$query = "SELECT * FROM users WHERE mail='$id' AND pwd='$pwd' " ; 
