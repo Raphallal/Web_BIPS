@@ -122,8 +122,8 @@
 							<a style="float:right;" onclick="change_onglet('list');first_upload=false;">Retour à la liste</a>
 						</div>
 						<div class="col-lg-12 form-group">
-						<form id="file-form" method="POST">
-							<input type="file" id="file-select" name="attachment[]" onchange="addForm();" accept="application/pdf" multiple />
+						<form id="file-form" method="POST" action="upload.php" enctype="multipart/form-data">
+							<input type="file" id="file-select" name="files[]" onchange="addForm();" accept="application/pdf" multiple />
 						</form>
 						</div>
 					</div>

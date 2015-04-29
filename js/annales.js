@@ -19,7 +19,7 @@ function addForm(){
 	window.moduledata = null
 	var addOptions = function(select) {
 		for (var i = 0; i < window.moduledata.length; i++) {
-			$(select).append("<option value=\""+i+"\">"+window.moduledata[i]+"</option>");
+			$(select).append("<option value=\""+window.moduledata[i]+"\">"+window.moduledata[i]+"</option>");
 		}
 	};
 	for(var i = 0;i<fileSelect.files.length;i++){
@@ -35,6 +35,7 @@ function addForm(){
 		typeDoc1.setAttribute('name', "typeDoc["+i+"]");
 		typeDoc1.setAttribute('value', "examen");
 		typeDoc1.setAttribute('id', "examen");
+		typeDoc1.setAttribute('checked', "true");
 		var label1 = document.createElement("label");
 		label1.setAttribute('for', "examen");
 		label1.innerHTML = "Examen";
@@ -68,6 +69,7 @@ function addForm(){
 
 		var select = document.createElement("select");
 		select.setAttribute('id','module');
+		select.setAttribute('name','module[]');
 		var wrapAddOptions = function(select) {
 			if (window.moduledata == null) {
 				$.getJSON("modulerequest.php", function(result) {window.moduledata = result; addOptions(select);});
@@ -81,6 +83,7 @@ function addForm(){
 
 		var yearselect = document.createElement("select");
 		yearselect.setAttribute('id', 'year');
+		yearselect.setAttribute('name', 'year[]');
 		var currentYear = new Date().getFullYear();
         var startYear = 2000;
         while ( startYear <= currentYear ) {
@@ -95,53 +98,9 @@ function addForm(){
 	clearfix.setAttribute('class',"clearfix");
 	form.appendChild(clearfix);
 
-	var upload = document.createElement("button");
+	var upload = document.createElement("input");
 	upload.setAttribute('type', "submit");
 	upload.setAttribute('id', 'upload-button');
 	upload.innerHTML = "Upload";
 	form.appendChild(upload);
-}
-
-form.onsubmit = function(event) {
-	event.preventDefault();
-
- // Update button text.
- $("#upload-button").text('Upload en cours...');
-
- var files = fileSelect.files;
- var formData = new FormData();
- for (var i = 0; i < files.length; i++) {
- 	var file = files[i];
-
-   // Check the file type.
-   if (!file.type.match('application/pdf')) {
-   	continue;
-   }
-
-   // Add the file to the request.
-   formData.append('attachment[]', file, file.name);
-}
-var xhr = null; 
-  if(window.XMLHttpRequest) // Firefox et autres
-  	xhr = new XMLHttpRequest(); 
-  else if(window.ActiveXObject){ // Internet Explorer 
-  	try {
-  		xhr = new ActiveXObject("Msxml2.XMLHTTP");
-  	} catch (e) {
-  		xhr = new ActiveXObject("Microsoft.XMLHTTP");
-  	}
-  }
-  else { // XMLHttpRequest non supporté par le navigateur 
-  	xhr = false; 
-  }
-  xhr.open('POST', 'upload.php', true);
-  xhr.onload = function () {
-  	if (xhr.status === 200) {
-  // File(s) uploaded.
-  $("#upload-button").text('Upload en cours...');
-} else {
-	alert('An error occurred!');
-}
-};
-xhr.send(formData);
 }
