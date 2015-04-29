@@ -100,7 +100,7 @@
 					if(page == 'galerie')
 						location.href="galerie.php";
 					if(page == 'annales')
-						location.href="";
+					location.href="annales.php";
 					else{
 						document.getElementById(anc_onglet+'_onglet').className = 'col-lg-1 onglet onglet_hoverable';
 						document.getElementById(page+'_onglet').className = 'col-lg-1 onglet onglet_choisi';
