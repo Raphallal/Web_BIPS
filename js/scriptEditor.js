@@ -110,7 +110,7 @@
     }
 
     function alertValidationClubs(newClub){
-        if(club != "none"){
+        if(newClub != "none"){
             if(document.getElementById('modif'+club).className == 'visible' && document.getElementById('modif'+club).value == "Valider"){
                 if(confirm('Attention, les modifications n\'ont pas été valider \nVoulez-vous continuer (les changements seront perdus)')){
                     var id = "descriptionClub";

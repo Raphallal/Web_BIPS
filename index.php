@@ -26,7 +26,18 @@
 		<script type="text/javascript" src="js/scriptAccueil.js"></script>
 		<script type="text/javascript" src="js/jquery-2.1.3.js"></script>
 		<script type="text/javascript">
-			
+			function getQuerystring(key, default_) {
+			   if (default_==null) default_="";
+			   key = key.replace(/[\[]/,"\\\[").replace(/[\]]/,"\\\]");
+			   var regex = new RegExp("[\\?&]"+key+"=([^&#]*)");
+			   var qs = regex.exec(window.location.href);
+			   if(qs == null || (qs[1] != 'index' && qs[1] != 'bips' && qs[1] != 'journal' && qs[1] != 'clubs' && qs[1] != 'boutique' && qs[1] != 'events' && qs[1] != 'galerie' && qs[1] != 'annales')) 
+				   return 'index'; 
+			   else				
+					return qs[1];
+			}
+			var anc_onglet = getQuerystring('page');
+			var anc_onglet_club = 'presentation';
 			function getUsernameFromSession(){
         		var username = <?php echo json_encode($_SESSION['username']);?>;
         		return username;
@@ -249,19 +260,7 @@
 			</footer>
 	</body>
 	<script type="text/javascript">
-			//<!--
-			function getQuerystring(key, default_) {
-			   if (default_==null) default_="";
-			   key = key.replace(/[\[]/,"\\\[").replace(/[\]]/,"\\\]");
-			   var regex = new RegExp("[\\?&]"+key+"=([^&#]*)");
-			   var qs = regex.exec(window.location.href);
-			   if(qs == null || (qs[1] != 'index' && qs[1] != 'bips' && qs[1] != 'journal' && qs[1] != 'clubs' && qs[1] != 'boutique' && qs[1] != 'events' && qs[1] != 'galerie' && qs[1] != 'annales')) 
-				   return 'index'; 
-			   else				
-					return qs[1];
-			}
-			var anc_onglet = getQuerystring('page');			
-			var anc_onglet_club = 'presentation';
+			//<!--			
 			changePage(anc_onglet);
 			var club = "none";
 			var divBefore = "";

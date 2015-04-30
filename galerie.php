@@ -13,7 +13,7 @@
 		<script type="text/javascript">
 			function changePage(page){
 					if(page == 'annales')
-						location.href="";
+						location.href="annales.php";
 					else if(page != 'galerie')
 						location.href="index.php?page="+page;
 			}
@@ -44,9 +44,9 @@
 				</section>
 			</div>
 			<footer class="row">
-			Site du BIPS | tous droits déclarés au BIPS. 
+			Site du BIPS | tous droits déclarés au BIPS.
 			</footer>
-	</body>	
+	</body>
 	<script type="text/javascript">
 		document.getElementById('galerie_onglet').className = 'col-lg-1 onglet onglet_choisi';
 	</script>

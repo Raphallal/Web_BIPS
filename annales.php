@@ -1,3 +1,14 @@
+<?php session_start()  ;
+	if( !isset($_SESSION['logged'] ) || !isset($_SESSION['admin']) || !isset($_SESSION['username']) )
+	{
+		$_SESSION['logged'] = false ;
+		$_SESSION['admin'] = false ;
+		$_SESSION['username'] = NULL ;
+		$_SESSION['filiere'] = NULL ;
+ 		$_SESSION['annee'] = NULL ;
+ 		$_SESSION['spe'] = NULL ;
+	}
+?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html slick-uniqueid="3" xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr-fr" dir="ltr" lang="fr-fr">
 <head>
@@ -20,6 +31,12 @@
 			document.getElementById(name).style.display = 'block';
 			anc_page = name;
 		}
+	function changePage(page){
+			if(page == 'annales')
+				location.href="annales.php";
+			else if(page != 'galerie')
+				location.href="index.php?page="+page;
+	}
 	var first_upload = true;
 	</script>
 </head>
@@ -43,49 +60,7 @@
 			</nav>
 		</div>
 		<div class="row">
-			<nav class="col-lg-3 menu">
-				<p>
-					<h2>Nous suivre</h2>
-					<h3>Sur Twitter</h3>
-					<a href="https://twitter.com/AssoBIPS?lang=fr">
-						<img src="images/twitter.JPG" alt="Twitter" title="Twitter" />
-					</a>
-					<?php/* include("follow_button.htm"); */?>
-					<br>
-					<h3>Sur facebook</h3>
-					<a href="https://www.facebook.com/bipsparissud?fref=ts">
-						<img src="images/facebook.png" width="80" height="50" alt="Facebook" title="Facebook" />
-					</a>
-					<?php  /*?>
-					<br><br>
-					<h3>RSS</h3>
-					<a href="">
-					<img src="images/rss2.png" style="position: relative; right: 90px" width="50" height="50" alt="RSS" title="RSS" />
-					</a>
-					*/ ?>
-				</p>
-				<form action="enregistrement.php" method="post"> 
-					<table>
-						<tr>
-							<td colspan="2"><h2>Connexion</h2></th>
-							</tr>
-							<tr>
-								<th>Identifiant </th>
-								<td><input type="text" name="iden" id="iden"/></td>
-							</tr>
-							<tr>
-								<th>Mot de passe </th>
-								<td><input type="password" name="passwd" id="passwd"/></td>
-							</tr>
-							<tr>
-								<th></th>
-								<td><input type="submit" value="Se connecter" /></td>
-							</tr>
-						</table>
-					</form>
-					<p><a href="createAccount.html" target="_blank">Créer un compte</a></p>
-					<p><a href="passForgot.html" target="_blank">Mot de passe oublié ?</a></p>
-				</nav>
+			<?php include("module_connexion.php"); ?>
 				<section class="col-lg-9">
 					<div id="list">
 						<div class="col-lg-12 an_header">
@@ -96,7 +71,7 @@
 						include("connexion.php");
 						$db = connexion("maquette_14_15");
 						$sql = 'SELECT modhule,titre, gestionnaire
-						FROM `modules` 
+						FROM `modules`
 						WHERE LEFT(modhule,2) = "d1"
 						AND (gestionnaire = "Et" OR gestionnaire = "Et-Info")';
 						$req = mysqli_query($db, $sql) or die(mysqli_error($db));
@@ -130,7 +105,7 @@
 				</section>
 			</div>
 			<footer class="row">
-				Site du BIPS | tous droits déclarés au BIPS. 
+				Site du BIPS | tous droits déclarés au BIPS.
 			</footer>
 		</body>
 	<script type="text/javascript">
