@@ -23,6 +23,7 @@
 		<link rel="stylesheet" href="css/style_BIPS.css" type="text/css">
 		<script type="text/javascript" src="ckeditor/ckeditor.js"></script>
 		<script type="text/javascript" src="js/scriptEditor.js"></script>
+		<script type="text/javascript" src="js/scriptEvents.js"></script>
 		<script type="text/javascript" src="js/scriptAccueil.js"></script>
 		<script type="text/javascript" src="js/jquery-2.1.3.js"></script>
 		<script type="text/javascript">
