@@ -50,9 +50,9 @@
 			if( $_SESSION['admin'] )
 			{
 				echo "<i>Administrateur</i><br>" ; 
-			}
-			echo "<br>" ; 
+			} 
 			?>
+			<a href="account.php">Gérer mon compte</a><br><br>
 			<a href="enregistrement.php?d=disconnect">Me déconnecter </a><br>
 			<?php
 		}
