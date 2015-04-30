@@ -46,7 +46,7 @@
 			<?php
 		}
 		else{
-			echo "Connecté en tant que : <br> <b>".$_SESSION['username']."</b><br>" ; 
+			echo "<h2>Connecté en tant que </h2><b>".$_SESSION['username']."</b><br>" ; 
 			if( $_SESSION['admin'] )
 			{
 				echo "<i>Administrateur</i><br>" ; 
