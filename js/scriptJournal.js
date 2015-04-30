@@ -1,13 +1,13 @@
-  function modifierEvent(idInput, idarticle){
+  function modifierArticleJournal(idInput, idarticle){
         if(document.getElementById('button'+idInput).value == "Modifier"){
-                document.getElementById(idInput).className = 'non-visible modifEvent';
+                document.getElementById(idInput).className = 'non-visible modifJournal';
                 CKEDITOR.replace(idInput);
                 document.getElementById('button'+idInput).value = "Valider";
                 alertNoChange = 1;
             }
             else if(document.getElementById('button'+idInput).value == "Valider"){
                 var text = CKEDITOR.instances[idInput].getData();
-                document.getElementById(idInput).className = 'visible modifAEvent';
+                document.getElementById(idInput).className = 'visible modifJournal';
                 CKEDITOR.instances[idInput].destroy();
                 document.getElementById('button'+idInput).value = "Modifier";
 
@@ -17,7 +17,7 @@
             }
     }
 
-    function saveEvent(idArticle, contenu, idPage){
+    function saveArticleJournal(idArticle, contenu, idPage){
         // creation d'un oblet xmlhttprequest
         var xhr = objet_XMLHttpRequest();
         // Lorsqu'un réponse est émise par le serveur   
@@ -33,8 +33,8 @@
     }
 
 
-    function supprimerEvent(idArticle, idPage){
-        if(confirm('Etes-vous certain de supprimer cet event ?')){
+    function supprimerArticleJournal(idArticle, idPage){
+        if(confirm('Etes-vous certain de supprimer cet article ?')){
             // creation d'un oblet xmlhttprequest
             var xhr = objet_XMLHttpRequest();
             // Lorsqu'un réponse est émise par le serveur   
@@ -54,8 +54,8 @@
         }
     }
 
-    function ajouterEvent(idPage){
-        var titre = prompt("Saisir le titre de l'event","Titre");
+    function ajouterArticleJournal(idPage){
+        var titre = prompt("Saisir le titre de l'article","Titre");
         while(titre != null && titre == ""){
             titre = prompt("Saisir un titre valide !!!","Titre");
         }

@@ -15,10 +15,10 @@ while ($donnees = $req->fetch()){
 $req->closeCursor();
 echo '<input type="button" class="non-visible inputEvent" value="Ajouter"  onclick="ajouterEvent(5)"/>';
 ?>
-<!----
+<!--
 <p>
 	<h2 class="titre">Prochainement</h2>
 	<h3>Y'a le gala dans pas longtemps, ça va être bien bien bien bien bien
 	</h3>
 </p>
----->
+-->

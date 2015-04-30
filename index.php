@@ -25,6 +25,7 @@
 		<script type="text/javascript" src="js/scriptEditor.js"></script>
 		<script type="text/javascript" src="js/scriptEvents.js"></script>
 		<script type="text/javascript" src="js/scriptAccueil.js"></script>
+		<script type="text/javascript" src="js/scriptJournal.js"></script>
 		<script type="text/javascript" src="js/jquery-2.1.3.js"></script>
 		<script type="text/javascript">
 			function getQuerystring(key, default_) {
@@ -77,6 +78,12 @@
 					for(var i = 0; i < elemsEvents.length; i++) {
 					    elemsEvents[i].className = 'visible inputEvent';
 					}
+
+					//page journal
+					var elemsJournal = document.getElementsByClassName('inputJournal');
+					for(var i = 0; i < elemsEvents.length; i++) {
+					    elemsJournal[i].className = 'visible inputJournal';
+					}
 		        }
 		        else if(username == 'cinefips' && admin == 1){
 		            document.getElementById('modifCine').className = 'visible';
@@ -92,6 +99,11 @@
 		        }
 		        else if(username == 'journal' && admin == 1){
 		           document.getElementById('modifJournal').className = 'visible';
+
+		           var elemsJournal = document.getElementsByClassName('inputJournal');
+					for(var i = 0; i < elemsEvents.length; i++) {
+					    elemsJournal[i].className = 'visible inputJournal';
+					}
 		        }
 		        else if(username == 'kfet' && admin == 1){
 		             document.getElementById('modifKfet').className = 'visible';
