@@ -46,13 +46,13 @@
 			<?php
 		}
 		else{
-			echo "Connecté en tant que : <br> <b>".$_SESSION['username']."</b><br>" ; 
+			echo "<h2>Connecté en tant que </h2><b>".$_SESSION['username']."</b><br>" ; 
 			if( $_SESSION['admin'] )
 			{
 				echo "<i>Administrateur</i><br>" ; 
-			}
-			echo "<br>" ; 
+			} 
 			?>
+			<a href="account.php">Gérer mon compte</a><br><br>
 			<a href="enregistrement.php?d=disconnect">Me déconnecter </a><br>
 			<?php
 		}
