@@ -66,9 +66,15 @@
 		            document.getElementById('modifZikifips').className = 'visible';
 
 		            //page accueil
-		            var elems = document.getElementsByClassName('inputArticleAcc');
-					for(var i = 0; i < elems.length; i++) {
-					    elems[i].className = 'visible inputArticleAcc';
+		            var elemsAcc = document.getElementsByClassName('inputArticleAcc');
+					for(var i = 0; i < elemsAcc.length; i++) {
+					    elemsAcc[i].className = 'visible inputArticleAcc';
+					}
+
+					//page events
+					var elemsEvents = document.getElementsByClassName('inputEvent');
+					for(var i = 0; i < elemsEvents.length; i++) {
+					    elemsEvents[i].className = 'visible inputEvent';
 					}
 		        }
 		        else if(username == 'cinefips' && admin == 1){
