@@ -14,11 +14,10 @@ $req->closeCursor();
 </p></marquee>
 
 <?php
-$req = $bdd->query('SELECT idarticle, titre, date, contenu FROM article WHERE idpage = 1 ORDER BY date DESC');
+$req = $bdd->query('SELECT idarticle, titre, contenu FROM article WHERE idpage = 1 ORDER BY date DESC');
 while ($donnees = $req->fetch()){
 	echo '<p>';
 	echo '<h2 class="titre">' . $donnees['titre'] . '</h2>';
-	echo '<h5>' . $donnees['date'] . '</h5>';
     echo '<div id="'.$donnees['idarticle'].'1" class="visible"><h3>' . $donnees['contenu'] . '</h3></div>';
     echo '<input type="button" id="button'.$donnees['idarticle'].'1" class="non-visible inputArticleAcc" value="Modifier" onclick="modifierArticleAcc(\''.$donnees['idarticle'] .'1\',\''.$donnees['idarticle'] .'\')"/>';
     echo '<input type="button" class="non-visible inputArticleAcc" value="Supprimer"  onclick="supprimerArticleAcc(\''.$donnees['idarticle'] .'\',1)"/>';
