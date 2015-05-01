@@ -10,7 +10,7 @@
 	}
 
   include("connexion.php");
-  $db = connexion("maquette_14_15");
+  $db = connexion($bddMaquette);
   $sql = 'SELECT modhule,titre
     FROM `maquette_14_15`.`modules`
     WHERE annee_gestionnaire = "'.$_SESSION["annee"].'"

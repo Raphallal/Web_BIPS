@@ -33,7 +33,8 @@
 	<body>
 		<?php if( isset($_POST['prom']) )
 		{
-			$bdd = new PDO('mysql:host='.'localhost'.';dbname='.'bips', 'root', 'root') ;
+			include("connexion.php") ; 
+			$bdd = connexion($bddBips) ; 
 			$name = $_SESSION['username'] ; 
 			$query = " SELECT * FROM users WHERE mail='$name' " ; 
 			$answer = $bdd->query($query) ; 
@@ -78,7 +79,8 @@
 									<td>Mon adresse mail</td>
 									<td>
 									<?php 
-										$bdd = new PDO('mysql:host='.'localhost'.';dbname='.'bips', 'root', 'root') ;
+										include("connexion.php") ; 
+										$bdd = connexion($bddBips) ; 
 										$name = $_SESSION['username'] ; 
 										if( $_SESSION['admin'] == false )
 											$query = " SELECT * FROM users WHERE mail='$name' " ; 
@@ -117,7 +119,6 @@
 										<form method="post" action="account.php">
 											<select name="prom" size="1">
 											<?php 
-												$bdd2 = new PDO('mysql:host='.'localhost'.';dbname='.'bips', 'root', 'root') ;
 												$affiche2 = $bdd->query('SELECT * FROM fildepa WHERE semestre=0') ; 
 												while( $affiche_data = $affiche2->fetch()){
 													if( strcmp($data['filiere'], $affiche_data['filiere'])==0 && strcmp($data['annee'], $affiche_data['annee'])==0 && strcmp($data['spe'], $affiche_data['dept'])==0 ){

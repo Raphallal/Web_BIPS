@@ -38,9 +38,9 @@
 				(strpos($mail1, '.') < strlen($mail1)-3) && (strcmp($promo, "Aucune")!= 0) )
 			{
 				$str = split(" ", $promo) ; 
-				$bdd = new PDO('mysql:host='.'localhost'.';dbname='.'bips', 'root', 'root') ;
-
-				//$query= "SELECT * FROM logins WHERE nickname='$nick' AND password =PASSWORD('$pwd')" ; 
+				include("connexion.php") ; 
+				$bdd = connexion($bddBips) ; 
+ 				//$query= "SELECT * FROM logins WHERE nickname='$nick' AND password =PASSWORD('$pwd')" ; 
 				$query = "SELECT * FROM users WHERE mail='$mail1'" ; 
 
 				$mailReq = $bdd->query($query) ; 

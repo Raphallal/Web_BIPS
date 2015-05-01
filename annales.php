@@ -81,7 +81,7 @@
 							<a style="float:right;" onclick="change_onglet(\'upload\');">Gérer vos fichiers</a>
 						</div>';
 
-						$db = connexion("maquette_14_15");
+						$db = connexion($bddMaquette);
 						$sql = NULL;
 
 						if(!$_SESSION['admin']){

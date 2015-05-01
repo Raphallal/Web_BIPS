@@ -253,7 +253,10 @@
 			<div class="row">
 			<?php include("module_connexion.php"); ?> 
 				<section class="col-lg-9">
-					<?php include("connexion_bd_bips.php"); ?>
+					<?php 
+						include("connexion.php") ; 
+						$bdd = connexion($bddBips) ; 
+					?>
 					<span id="index_contenu" class="non-visible">
 						<?php include("accueil.php"); ?>
 					</span>

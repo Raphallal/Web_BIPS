@@ -9,9 +9,8 @@
  		$_SESSION['spe'] = NULL ;
 	}
 
-include("connexion.php");
-
-$db = connexion("bips");
+include("connexion.php") ; 
+$db = connexion($bddBips);
 $valid_formats = array("pdf");
 $max_file_size = 1024*4096; //4Mo
 $path = "files/"; // Upload directory

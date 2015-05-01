@@ -25,9 +25,10 @@
 			if(isset($_POST['iden']) && isset($_POST['passwd']) )
 			{
 				$id = mysql_real_escape_string($_POST['iden']) ; 
-				$pwd = mysql_real_escape_string($_POST['passwd']) ; 
-				$bdd = new PDO('mysql:host='.'localhost'.';dbname='.'bips', 'root', '') ;
+				$pwd = mysql_real_escape_string($_POST['passwd']) ; 				
 				$pwd = md5($pwd) ; 
+				include("connexion.php") ; 
+				$bdd = connexion($bddBips) ; 
 				//$query= "SELECT * FROM logins WHERE nickname='$nick' AND password =PASSWORD('$pwd')" ; 
 				$query = "SELECT * FROM users WHERE mail='$id' AND pwd='$pwd' " ; 
 

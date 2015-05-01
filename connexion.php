@@ -1,14 +1,22 @@
 <?php
-$host = "localhost"; /* L'adresse du serveur */
-$login = "root"; /* Votre nom d'utilisateur */
-$password = ""; /* Votre mot de passe */
+
+$host = 'localhost'; /* L'adresse du serveur */
+$login = 'root'; /* Votre nom d'utilisateur */
+$password = 'root'; /* Votre mot de passe */
+$bddBips = 'bips' ; 
+$bddMaquette = 'maquette_14_15' ; 
+$bddMaquetteM1 = '' ; 
 
 function connexion($base)
 {
-global $host, $login, $password;
-$db = mysqli_connect($host, $login, $password);
-mysqli_set_charset($db, "utf8");
-mysqli_select_db($db, $base);
-return $db;
+	global $host, $login, $password;
+	try{
+	    $bdd = new PDO('mysql:host='.$host.';dbname='.$base.';charset=utf8', $login, $password );
+	}
+	catch(Exception $e){
+	    die('Erreur : '.$e->getMessage());
+	}
+	return $bdd;
 }
+
 ?>

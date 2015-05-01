@@ -1,6 +1,7 @@
 <?php
 
-include("connexion_bd_bips.php");
+include("connexion.php") ; 
+$bdd = connexion($bddBips) ; 
 
 $idarticle = $_POST['idarticle'];
 $idpage = $_POST['idpage'];

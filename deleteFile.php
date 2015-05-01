@@ -10,8 +10,7 @@
 	}
 
 include("connexion.php");
-
-$db = connexion("bips");
+$db = connexion($bddBips);
 if(!$_SESSION['admin']) $sql = 'DELETE FROM `bips`.`files`
 WHERE files.uploader = "'.$_SESSION["username"].'"
 AND files.id = '.$_GET["id"];
