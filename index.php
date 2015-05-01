@@ -40,6 +40,8 @@
 			}
 			var anc_onglet = getQuerystring('page');
 			var anc_onglet_club = 'presentation';
+			var club = "none";
+			
 			function getUsernameFromSession(){
         		var username = <?php echo json_encode($_SESSION['username']);?>;
         		return username;
@@ -284,7 +286,7 @@
 	<script type="text/javascript">
 			//<!--			
 			changePage(anc_onglet);
-			var club = "none";
+			
 			var divBefore = "";
 			var anc_page_club = "";
 			//-->
