@@ -102,7 +102,9 @@
 								echo '
 								<div class="col-lg-12 an_bar">
 									'.$data["titre"].'
-									</div>';
+									<span style="float:right"> Semestre '.substr($data["modhule"],1,1).'
+									</span>
+								</div>';
 								$subsql = 'SELECT path, type, year, uploader, date
 								FROM bips.files
 								WHERE modhule = "'.$data["modhule"].'"
@@ -129,12 +131,19 @@
 							<div class="col-lg-12 an_bar">
 							Vos uploads
 							</div>';
-							$sql = 'SELECT path, type, year, uploader, date, titre, id
+							
+							if(!$_SESSION['admin']) $sql = 'SELECT path, type, year, uploader, date, titre, id
 							FROM bips.files, maquette_14_15.modules
 							WHERE uploader = "'.$_SESSION["username"].'"
 							AND files.modhule = modules.modhule
 							GROUP BY path
-							ORDER BY year DESC;';
+							ORDER BY date DESC;';
+							else $sql = 'SELECT path, type, year, uploader, date, titre, id
+							FROM bips.files, maquette_14_15.modules
+							WHERE files.modhule = modules.modhule
+							GROUP BY path
+							ORDER BY date DESC;';
+
 							$req = mysqli_query($db, $sql) or die(mysqli_error($db));
 							echo '<table class="col-lg-offset-1 col-lg-10 an_bar_subtab">';
 							while($data = mysqli_fetch_assoc($req)){

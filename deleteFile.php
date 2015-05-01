@@ -12,9 +12,12 @@
 include("connexion.php");
 
 $db = connexion("bips");
-$sql = 'DELETE FROM `bips`.`files`
+if(!$_SESSION['admin']) $sql = 'DELETE FROM `bips`.`files`
 WHERE files.uploader = "'.$_SESSION["username"].'"
 AND files.id = '.$_GET["id"];
+
+else $sql = 'DELETE FROM `bips`.`files`
+WHERE files.id = '.$_GET["id"];
 
 mysqli_query($db, $sql) or die(mysqli_error($db));
 ?>

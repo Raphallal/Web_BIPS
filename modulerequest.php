@@ -20,7 +20,7 @@
   while($data = mysqli_fetch_assoc($req))
   {
     $res["module"] = $data["modhule"];
-    $res["titre"] = $data["titre"];
+    $res["titre"] = $data["titre"]." - S".substr($data["modhule"],1,1);
     array_push($json_response, $res);
   }
   echo json_encode($json_response);
