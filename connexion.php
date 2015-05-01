@@ -7,6 +7,7 @@ function connexion($base)
 {
 global $host, $login, $password;
 $db = mysqli_connect($host, $login, $password);
+mysqli_set_charset($db, "utf8");
 mysqli_select_db($db, $base);
 return $db;
 }

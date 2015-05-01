@@ -19,13 +19,13 @@ function addForm(){
 	window.moduledata = null
 	var addOptions = function(select) {
 		for (var i = 0; i < window.moduledata.length; i++) {
-			$(select).append("<option value=\""+window.moduledata[i]+"\">"+window.moduledata[i]+"</option>");
+			$(select).append("<option value=\""+window.moduledata[i]["module"]+"\">"+window.moduledata[i]["titre"]+"</option>");
 		}
 	};
 	for(var i = 0;i<fileSelect.files.length;i++){
 		if(!endsWith(fileSelect.files[i].name.split(/(\\|\/)/g).pop(), ".pdf")) continue;
 		var div = document.createElement("div");
-		div.setAttribute('class', "col-lg-4");
+		div.setAttribute('class', "col-lg-6");
 		div.setAttribute('style', "border:1px solid gray;")
 		div.innerHTML = fileSelect.files[i].name.split(/(\\|\/)/g).pop();
 		div.appendChild(document.createElement("br"));
@@ -58,13 +58,25 @@ function addForm(){
 		var typeDoc3 = document.createElement("input");
 		typeDoc3.setAttribute('type', "radio");
 		typeDoc3.setAttribute('name', "typeDoc["+i+"]");
-		typeDoc3.setAttribute('value', "correction");
-		typeDoc3.setAttribute('id', "correction");
+		typeDoc3.setAttribute('value', "correction examen");
+		typeDoc3.setAttribute('id', "correction examen");
 		var label3 = document.createElement("label");
-		label3.setAttribute('for', "correction");
-		label3.innerHTML = "Corrigé";
+		label3.setAttribute('for', "correction examen");
+		label3.innerHTML = "Corrigé Examen";
 		div.appendChild(typeDoc3);
 		div.appendChild(label3);
+		div.appendChild(document.createElement("br"));
+
+		var typeDoc4 = document.createElement("input");
+		typeDoc4.setAttribute('type', "radio");
+		typeDoc4.setAttribute('name', "typeDoc["+i+"]");
+		typeDoc4.setAttribute('value', "correction td");
+		typeDoc4.setAttribute('id', "correction td");
+		var label4 = document.createElement("label");
+		label4.setAttribute('for', "correction td");
+		label4.innerHTML = "Corrigé TD";
+		div.appendChild(typeDoc4);
+		div.appendChild(label4);
 		div.appendChild(document.createElement("br"));
 
 		var select = document.createElement("select");
@@ -86,7 +98,7 @@ function addForm(){
 		yearselect.setAttribute('name', 'year[]');
 		var currentYear = new Date().getFullYear();
         var startYear = 2000;
-        while ( startYear <= currentYear ) {
+        while ( startYear < currentYear ) {
                 $(yearselect).append("<option value=\""+ startYear +"\">"+startYear+ "-" + ++startYear +"</option>");
         }
 

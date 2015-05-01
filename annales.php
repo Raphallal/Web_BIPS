@@ -31,7 +31,8 @@
 			document.getElementById(name).style.display = 'block';
 			anc_page = name;
 		}
-	function changePage(page){
+	function changePage(page)
+		{
 			if(page == 'annales')
 				location.href="annales.php";
 			else if(page != 'galerie')
@@ -75,9 +76,11 @@
 							<div class="col-lg-12 an_header">
 							<span style="text-align:left;">';
 						echo ucwords(str_replace("."," ",preg_replace('/\d/', '',substr($_SESSION['username'],0,-10))))." - ".$_SESSION['filiere'].$_SESSION['annee']." ".$_SESSION['spe'];
-						echo '</span>
-							<a style="float:right;" onclick="change_onglet("upload");">Uploader un fichier</a>
+						echo '
+						</span>
+							<a style="float:right;" onclick="change_onglet(\'upload\');">Gérer vos fichiers</a>
 						</div>';
+
 						$db = connexion("maquette_14_15");
 						$sql = NULL;
 
@@ -88,7 +91,7 @@
 							AND (gestionnaire = "'.$_SESSION["filiere"].'" OR gestionnaire = "'.$_SESSION["filiere"]."-".$_SESSION["spe"].'")';
 						}
 						else{
-							$sql = 'SELECT modhule,titre, gestionnaire
+							$sql = 'SELECT modhule,titre
 							FROM `maquette_14_15`.`modules`';
 						}
 
@@ -98,31 +101,61 @@
 							{
 								echo '
 								<div class="col-lg-12 an_bar">
-									'.utf8_decode($data["titre"]).'
-									</div>
-									<table class="col-lg-offset-1 col-lg-10 an_bar_subtab">
-										<tr>
-											<td>'. utf8_decode($data["modhule"]) .'</td>
-											<td>'. $data["gestionnaire"] .'</td>
-											<td>Coucou</td>
-										</tr>
-									</table>';
+									'.$data["titre"].'
+									</div>';
+								$subsql = 'SELECT path, type, year, uploader, date
+								FROM bips.files
+								WHERE modhule = "'.$data["modhule"].'"
+								GROUP BY path
+								ORDER BY year DESC;';
+								$subreq = mysqli_query($db, $subsql) or die(mysqli_error($db));
+								echo '<table class="col-lg-offset-1 col-lg-10 an_bar_subtab">';
+								while($subdata = mysqli_fetch_assoc($subreq)){
+									echo '<tr>
+										<td><a href="'.$subdata["path"].'">'.ucwords($subdata["type"]).' '.$subdata["year"].'-'.($subdata["year"]+1).'</a></td>
+										<td>'.ucwords(str_replace("."," ",preg_replace('/\d/', '',substr($subdata['uploader'],0,-10)))).'</td>
+										<td>'.date("d/m/Y", strtotime($subdata["date"])).'</td>
+									</tr>';
+								}
+								echo '</table>';
 							}
 						}
+						echo '</div>
+						<div id="upload">
+							<div class="col-lg-12 an_header" id="upload">
+								<span style="text-align:left;">'.ucwords(str_replace("."," ",preg_replace('/\d/', '',substr($_SESSION['username'],0,-10))))." - ".$_SESSION['filiere'].$_SESSION['annee']." ".$_SESSION['spe'].'</span>
+								<a style="float:right;" onclick="change_onglet(\'list\');first_upload=false;">Retour à la liste</a>
+							</div>
+							<div class="col-lg-12 an_bar">
+							Vos uploads
+							</div>';
+							$sql = 'SELECT path, type, year, uploader, date, titre, id
+							FROM bips.files, maquette_14_15.modules
+							WHERE uploader = "'.$_SESSION["username"].'"
+							AND files.modhule = modules.modhule
+							GROUP BY path
+							ORDER BY year DESC;';
+							$req = mysqli_query($db, $sql) or die(mysqli_error($db));
+							echo '<table class="col-lg-offset-1 col-lg-10 an_bar_subtab">';
+							while($data = mysqli_fetch_assoc($req)){
+								echo '<tr>
+									<td><a href="'.$data["path"].'">'.$data["titre"].' '.ucwords($data["type"]).' '.$data["year"].'-'.($subdata["year"]+1).'</a></td>
+									<td>'.date("d/m/Y", strtotime($data["date"])).'</td>
+									<td><a href="deleteFile.php?id='.$data["id"].'">Supprimer</a></td>
+								</tr>';
+							}
+							echo '</table>';
+							echo '<div class="col-lg-12 an_bar">
+							Uploader des fichiers
+							</div>
+							<div class="col-lg-12 form-group" style="margin-top:10px;">
+							<form id="file-form" method="POST" action="upload.php" enctype="multipart/form-data">
+								<input type="file" id="file-select" name="files[]" onchange="addForm();" accept="application/pdf" multiple />
+							</form>
+							</div>
+						</div>';
 					}
 					?>
-					</div>
-					<div id="upload">
-						<div class="col-lg-12 an_header" id="upload">
-							<span style="text-align:left;">Gaétan Young - Et4 Info</span>
-							<a style="float:right;" onclick="change_onglet('list');first_upload=false;">Retour à la liste</a>
-						</div>
-						<div class="col-lg-12 form-group">
-						<form id="file-form" method="POST" action="upload.php" enctype="multipart/form-data">
-							<input type="file" id="file-select" name="files[]" onchange="addForm();" accept="application/pdf" multiple />
-						</form>
-						</div>
-					</div>
 				</section>
 			</div>
 			<footer class="row">
