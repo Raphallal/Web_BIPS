@@ -99,7 +99,7 @@
 	</tbody>
 	</table>
 
-	<input type="button" value="ajouter un nouveau produit" onclick="changeView()">
+	<input type="button" id="btnAjoutProduit" class="non-visible" value="ajouter un nouveau produit" onclick="changeView()">
 
 	<form method="post" action="addProduit.php" enctype="multipart/form-data" id="formAddProduit" class="non-visible" onSubmit="changeView()"> 
 		<br>

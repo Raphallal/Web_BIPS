@@ -25,6 +25,7 @@ function droitModif(){
 		document.getElementById('modifPopsgames').className = 'visible';
 		document.getElementById('modifSpips').className = 'visible';
 		document.getElementById('modifZikifips').className = 'visible';
+		document.getElementById('btnAjoutProduit').className = 'visible';
 
 		//page accueil
 		var elemsAcc = document.getElementsByClassName('inputArticleAcc');
