@@ -2,7 +2,7 @@
 
 $host = 'localhost'; /* L'adresse du serveur */
 $login = 'root'; /* Votre nom d'utilisateur */
-$password = ''; /* Votre mot de passe */
+$password = 'root'; /* Votre mot de passe */
 $bddBips = 'bips' ; 
 $bddMaquette = 'maquette_14_15' ; 
 $bddMaquetteM1 = '' ; 

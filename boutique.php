@@ -13,7 +13,6 @@
 	<tbody>
 			
 		<?php
-
 		$req = $bdd->query('SELECT idproduit, titre, description, prixadherent, prixnonadherent, imagepath, date FROM boutique');
 		while ($donnees = $req->fetch()){
 			$image = imagecreatefromjpeg($donnees['imagepath']);
