@@ -19,6 +19,7 @@
 	</a>
 	*/ ?>
 	</p>
+	<p>
 	<?php 
 		if( (isset($_SESSION['logged']) && $_SESSION['logged'] == false) || !isset($_SESSION['logged']) ){
 			?>
@@ -57,5 +58,6 @@
 			<?php
 		}
 	 ?>
+	 </p>
 
 </nav>

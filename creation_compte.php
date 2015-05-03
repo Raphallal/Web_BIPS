@@ -38,7 +38,12 @@
 				(strpos($mail1, '.') < strlen($mail1)-3) && (strcmp($promo, "Aucune")!= 0) )
 			{
 				$str = split(" ", $promo) ; 
-				$bdd = new PDO('mysql:host='.'localhost'.';dbname='.'bips', 'root', 'root') ;
+				try{
+					$bdd = new PDO('mysql:host=localhost;dbname=bips;charset=utf8', 'root', '');
+				}
+				catch(Exception $e){
+						die('Erreur : '.$e->getMessage());
+				}
 
 				//$query= "SELECT * FROM logins WHERE nickname='$nick' AND password =PASSWORD('$pwd')" ; 
 				$query = "SELECT * FROM users WHERE mail='$mail1'" ; 
@@ -94,7 +99,7 @@
 			</header>
 			<div class="row">
 			<nav class="col-lg-12 onglets">
-				<a href="index.php" ><span class="col-lg-2 onglet onglet_hoverable" id="index_onglet">Retour à l'accueil</span></a>
+				<a href="index.php?page=index" ><span class="col-lg-2 onglet onglet_hoverable" id="index_onglet">Retour à l'accueil</span></a>
 			</nav>
 			</div>
 			<div class="row">
@@ -135,7 +140,12 @@
 											<option selected>Aucune</option>
 											<option>Professeur</option>
 											<?php 
-												$bdd = new PDO('mysql:host='.'localhost'.';dbname='.'bips', 'root', 'root') ;
+												try{
+													$bdd = new PDO('mysql:host=localhost;dbname=bips;charset=utf8', 'root', '');
+												}
+												catch(Exception $e){
+														die('Erreur : '.$e->getMessage());
+												}
 												$affiche = $bdd->query('SELECT * FROM fildepa WHERE semestre=0') ; 
 
 												while( $affiche_data = $affiche->fetch()){

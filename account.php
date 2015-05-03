@@ -78,7 +78,12 @@
 									<td>Mon adresse mail</td>
 									<td>
 									<?php 
-										$bdd = new PDO('mysql:host='.'localhost'.';dbname='.'bips', 'root', 'root') ;
+										try{
+											$bdd = new PDO('mysql:host=localhost;dbname=bips;charset=utf8', 'root', '');
+										}
+										catch(Exception $e){
+												die('Erreur : '.$e->getMessage());
+										}
 										$name = $_SESSION['username'] ; 
 										if( $_SESSION['admin'] == false )
 											$query = " SELECT * FROM users WHERE mail='$name' " ; 
@@ -106,7 +111,7 @@
 
 								?>
 								<?php
-								if( !$data['admin'] && strcmp($data['prom'], "Prof") )
+								if( !$data['admin'] && strcmp($data['filiere'], "Prof") )
 								{
 									?>
 									<tr>
@@ -117,8 +122,13 @@
 										<form method="post" action="account.php">
 											<select name="prom" size="1">
 											<?php 
-												$bdd2 = new PDO('mysql:host='.'localhost'.';dbname='.'bips', 'root', 'root') ;
-												$affiche2 = $bdd->query('SELECT * FROM fildepa WHERE semestre=0') ; 
+												try{
+													$bdd2 = new PDO('mysql:host=localhost;dbname=bips;charset=utf8', 'root', '');
+												}
+												catch(Exception $e){
+														die('Erreur : '.$e->getMessage());
+												}
+												$affiche2 = $bdd2->query('SELECT * FROM fildepa WHERE semestre=0') ; 
 												while( $affiche_data = $affiche2->fetch()){
 													if( strcmp($data['filiere'], $affiche_data['filiere'])==0 && strcmp($data['annee'], $affiche_data['annee'])==0 && strcmp($data['spe'], $affiche_data['dept'])==0 ){
 														?> 
