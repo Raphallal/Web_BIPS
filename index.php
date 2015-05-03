@@ -26,11 +26,8 @@
 		<script type="text/javascript" src="js/scriptEvents.js"></script>
 		<script type="text/javascript" src="js/scriptAccueil.js"></script>
 		<script type="text/javascript" src="js/scriptJournal.js"></script>
-<<<<<<< HEAD
 		<script type="text/javascript" src="js/scriptBoutique.js"></script>
-=======
 		<script type="text/javascript" src="js/scriptIndex.js"></script>
->>>>>>> origin/Master_merge
 		<script type="text/javascript" src="js/jquery-2.1.3.js"></script>
 		<script type="text/javascript">
 			var anc_onglet = getQuerystring('page');
