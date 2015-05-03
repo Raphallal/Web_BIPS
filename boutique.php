@@ -1,5 +1,5 @@
 <p>
-	<table class="table header-fixed boutique">
+	<table id="boutiqueTable" class="table header-fixed boutique">
 	<thead class="floating-header">
 		<tr>
 			<th class="thBoutique mid">Nom</th>
@@ -14,12 +14,13 @@
 			
 		<?php
 
-		$req = $bdd->query('SELECT idproduit, titre, description, prixadherent, prixnonadherent, imagepath, date FROM boutique');
+		$req = $bdd->query('SELECT idproduit, titre, description, prixadherent, prixnonadherent, imagepath, date FROM boutique WHERE envente=1');
+		$i = 0;
 		while ($donnees = $req->fetch()){
-			$image = imagecreatefromjpeg($donnees['imagepath']);
+			//$image = imagecreatefromjpeg($donnees['imagepath']);
 			$filename = $donnees['imagepath'];
 
-			$thumb_width = 80;
+			/*$thumb_width = 80;
 			$thumb_height = 60;
 
 			$width = imagesx($image);
@@ -51,26 +52,28 @@
 			                   0, 0,
 			                   $new_width, $new_height,
 			                   $width, $height);
-			imagejpeg($thumb, $filename, 80);
+			imagejpeg($thumb, $filename, 80);*/
 
-			if($donnees['idproduit'] % 2 != 0){
+			if($i % 2 != 0){
 				echo '<tr class="fondGris">';
 				echo '<td class="tdBoutique mid">'.$donnees['titre'].'</td\>';
 				echo '<td class="tdBoutique grand">'.$donnees['description'].'</td\>';
 				echo '<td class="tdBoutique petit dore">'.$donnees['prixadherent'].' €</td\>';
 				echo '<td class="tdBoutique petit rouge">'.$donnees['prixnonadherent'].' €</td\>';
-				echo '<td class="tdBoutique mid"><img src="'.$filename.'"></td\>';
+				echo '<td class="tdBoutique mid"><img width=80 height=60 src="'.$filename.'"></td\>';
 				echo '</tr>';
 			}
 			else{
-				echo '<tr">';
+				echo '<tr>';
 				echo '<td class="tdBoutique mid">'.$donnees['titre'].'</td\>';
 				echo '<td class="tdBoutique grand">'.$donnees['description'].'</td\>';
 				echo '<td class="tdBoutique petit dore">'.$donnees['prixadherent'].' €</td\>';
 				echo '<td class="tdBoutique petit rouge">'.$donnees['prixnonadherent'].' €</td\>';
-				echo '<td class="tdBoutique mid"><img src="'.$filename.'"></td\>';
+				echo '<td class="tdBoutique mid"><img width=80 height=60 src="'.$filename.'"></td\>';
 				echo '</tr>';
 			}
+
+			$i = $i +1;
 		}
 		$req->closeCursor();
 
@@ -95,4 +98,29 @@
 		?>
 	</tbody>
 	</table>
+
+	<input type="button" value="ajouter un nouveau produit" onclick="changeView()">
+
+	<form method="post" action="addProduit.php" enctype="multipart/form-data" id="formAddProduit" class="non-visible" onSubmit="changeView()"> 
+		<br>
+		<h4>Ajouter un nouveau produit</h4>
+		<br>
+		<label form="formAddProduit">Nom du produit : </label>
+		<input type="text" name="nom" value="nom">
+		<br>
+		<label form="formAddProduit">Description : </label>
+		<textarea name="description" >description</textarea>
+		<br>
+		<label form="formAddProduit">Prix adhérent : </label>
+		<input type="number" name="prixAdh" min="0" max="150" step="0.5">
+		<br>
+		<label form="formAddProduit">Prix non adhérent : </label>
+		<input type="number" name="prixNonAdh" min="0" max="150" step="0.5">
+		<br>
+		<label form="formAddProduit">Image : </label>
+		<input name="fileImgProduit" id="fileImgProduit" type="file" style="display:inline-block">
+		<input name="directory" value="images/" class="non-visible" type="text">        
+    	<input value="Ajouter" type="submit" style="display:block">
+    	<br>
+	</form>
 </p>

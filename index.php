@@ -26,6 +26,7 @@
 		<script type="text/javascript" src="js/scriptEvents.js"></script>
 		<script type="text/javascript" src="js/scriptAccueil.js"></script>
 		<script type="text/javascript" src="js/scriptJournal.js"></script>
+		<script type="text/javascript" src="js/scriptBoutique.js"></script>
 		<script type="text/javascript" src="js/jquery-2.1.3.js"></script>
 		<script type="text/javascript">
 			function getQuerystring(key, default_) {
@@ -41,7 +42,7 @@
 			var anc_onglet = getQuerystring('page');
 			var anc_onglet_club = 'presentation';
 			var club = "none";
-			
+
 			function getUsernameFromSession(){
         		var username = <?php echo json_encode($_SESSION['username']);?>;
         		return username;
