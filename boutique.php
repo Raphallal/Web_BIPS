@@ -13,9 +13,13 @@
 	<tbody>
 			
 		<?php
+<<<<<<< HEAD
 
 		$req = $bdd->query('SELECT idproduit, titre, description, prixadherent, prixnonadherent, imagepath, date FROM boutique WHERE envente=1');
 		$i = 0;
+=======
+		$req = $bdd->query('SELECT idproduit, titre, description, prixadherent, prixnonadherent, imagepath, date FROM boutique');
+>>>>>>> origin/Master_merge
 		while ($donnees = $req->fetch()){
 			//$image = imagecreatefromjpeg($donnees['imagepath']);
 			$filename = $donnees['imagepath'];
